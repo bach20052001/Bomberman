@@ -1,4 +1,4 @@
-package com.carlosflorencio.bomberman.exceptions;
+package com.project.bomberman.exceptions;
 
 public class LoadLevelException extends BombermanException {
 	public LoadLevelException() {

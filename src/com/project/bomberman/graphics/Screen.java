@@ -1,14 +1,14 @@
-package com.carlosflorencio.bomberman.graphics;
+package com.project.bomberman.graphics;
 
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.FontMetrics;
 import java.awt.Graphics;
 
-import com.carlosflorencio.bomberman.Board;
-import com.carlosflorencio.bomberman.Game;
-import com.carlosflorencio.bomberman.entities.Entity;
-import com.carlosflorencio.bomberman.entities.mob.Player;
+import com.project.bomberman.Board;
+import com.project.bomberman.Game;
+import com.project.bomberman.entities.Entity;
+import com.project.bomberman.entities.mob.Player;
 
 public class Screen {
 	protected int _width, _height;

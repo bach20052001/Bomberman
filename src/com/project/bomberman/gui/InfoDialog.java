@@ -1,4 +1,4 @@
-package com.carlosflorencio.bomberman.gui;
+package com.project.bomberman.gui;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;

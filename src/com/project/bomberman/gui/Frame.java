@@ -1,12 +1,12 @@
-package com.carlosflorencio.bomberman.gui;
+package com.project.bomberman.gui;
 
 import java.awt.BorderLayout;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-import com.carlosflorencio.bomberman.Game;
-import com.carlosflorencio.bomberman.gui.menu.Menu;
+import com.project.bomberman.Game;
+import com.project.bomberman.gui.menu.Menu;
 
 public class Frame extends JFrame {
 	

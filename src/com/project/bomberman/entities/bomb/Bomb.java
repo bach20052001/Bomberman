@@ -1,14 +1,14 @@
-package com.carlosflorencio.bomberman.entities.bomb;
+package com.project.bomberman.entities.bomb;
 
-import com.carlosflorencio.bomberman.Board;
-import com.carlosflorencio.bomberman.Game;
-import com.carlosflorencio.bomberman.entities.AnimatedEntitiy;
-import com.carlosflorencio.bomberman.entities.Entity;
-import com.carlosflorencio.bomberman.entities.mob.Mob;
-import com.carlosflorencio.bomberman.entities.mob.Player;
-import com.carlosflorencio.bomberman.graphics.Screen;
-import com.carlosflorencio.bomberman.graphics.Sprite;
-import com.carlosflorencio.bomberman.level.Coordinates;
+import com.project.bomberman.Board;
+import com.project.bomberman.Game;
+import com.project.bomberman.entities.AnimatedEntitiy;
+import com.project.bomberman.entities.Entity;
+import com.project.bomberman.entities.mob.Mob;
+import com.project.bomberman.entities.mob.Player;
+import com.project.bomberman.graphics.Screen;
+import com.project.bomberman.graphics.Sprite;
+import com.project.bomberman.level.Coordinates;
 
 public class Bomb extends AnimatedEntitiy {
 

@@ -1,4 +1,4 @@
-package com.carlosflorencio.bomberman.level;
+package com.project.bomberman.level;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -8,25 +8,25 @@ import java.util.StringTokenizer;
 
 
 
-import com.carlosflorencio.bomberman.Board;
-import com.carlosflorencio.bomberman.Game;
-import com.carlosflorencio.bomberman.entities.LayeredEntity;
-import com.carlosflorencio.bomberman.entities.mob.Player;
-import com.carlosflorencio.bomberman.entities.mob.enemy.Balloom;
-import com.carlosflorencio.bomberman.entities.mob.enemy.Doll;
-import com.carlosflorencio.bomberman.entities.mob.enemy.Kondoria;
-import com.carlosflorencio.bomberman.entities.mob.enemy.Minvo;
-import com.carlosflorencio.bomberman.entities.mob.enemy.Oneal;
-import com.carlosflorencio.bomberman.entities.tile.GrassTile;
-import com.carlosflorencio.bomberman.entities.tile.PortalTile;
-import com.carlosflorencio.bomberman.entities.tile.WallTile;
-import com.carlosflorencio.bomberman.entities.tile.destroyable.BrickTile;
-import com.carlosflorencio.bomberman.entities.tile.powerup.PowerupBombs;
-import com.carlosflorencio.bomberman.entities.tile.powerup.PowerupFlames;
-import com.carlosflorencio.bomberman.entities.tile.powerup.PowerupSpeed;
-import com.carlosflorencio.bomberman.exceptions.LoadLevelException;
-import com.carlosflorencio.bomberman.graphics.Screen;
-import com.carlosflorencio.bomberman.graphics.Sprite;
+import com.project.bomberman.Board;
+import com.project.bomberman.Game;
+import com.project.bomberman.entities.LayeredEntity;
+import com.project.bomberman.entities.mob.Player;
+import com.project.bomberman.entities.mob.enemy.Balloom;
+import com.project.bomberman.entities.mob.enemy.Doll;
+import com.project.bomberman.entities.mob.enemy.Kondoria;
+import com.project.bomberman.entities.mob.enemy.Minvo;
+import com.project.bomberman.entities.mob.enemy.Oneal;
+import com.project.bomberman.entities.tile.GrassTile;
+import com.project.bomberman.entities.tile.PortalTile;
+import com.project.bomberman.entities.tile.WallTile;
+import com.project.bomberman.entities.tile.destroyable.BrickTile;
+import com.project.bomberman.entities.tile.powerup.PowerupBombs;
+import com.project.bomberman.entities.tile.powerup.PowerupFlames;
+import com.project.bomberman.entities.tile.powerup.PowerupSpeed;
+import com.project.bomberman.exceptions.LoadLevelException;
+import com.project.bomberman.graphics.Screen;
+import com.project.bomberman.graphics.Sprite;
 
 public class FileLevel extends Level {
 	
@@ -75,7 +75,7 @@ public class FileLevel extends Level {
 		
 		switch(c) { // TODO: minimize this method
 			case '#': 
-				_board.addEntitie(pos, new WallTile(x, y, Sprite.wall));  
+				_board.addEntitie(pos, new WallTile(x, y, Sprite.wall));
 				break;
 			case 'b': 
 				LayeredEntity layer = new LayeredEntity(x, y, 
@@ -118,7 +118,7 @@ public class FileLevel extends Level {
 			case 'x': 
 				_board.addEntitie(pos, new LayeredEntity(x, y, 
 						new GrassTile(x ,y, Sprite.grass), 
-						new PortalTile(x ,y, _board, Sprite.portal), 
+						new PortalTile(x ,y, _board, Sprite.portal),
 						new BrickTile(x ,y, Sprite.brick)) );
 				break;
 			case ' ': 

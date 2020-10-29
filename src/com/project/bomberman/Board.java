@@ -1,4 +1,4 @@
-package com.carlosflorencio.bomberman;
+package com.project.bomberman;
 
 import java.awt.Font;
 import java.awt.Graphics;
@@ -6,19 +6,19 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-import com.carlosflorencio.bomberman.entities.Entity;
-import com.carlosflorencio.bomberman.entities.Message;
-import com.carlosflorencio.bomberman.entities.bomb.Bomb;
-import com.carlosflorencio.bomberman.entities.bomb.Explosion;
-import com.carlosflorencio.bomberman.entities.mob.Mob;
-import com.carlosflorencio.bomberman.entities.mob.Player;
-import com.carlosflorencio.bomberman.entities.tile.powerup.Powerup;
-import com.carlosflorencio.bomberman.exceptions.LoadLevelException;
-import com.carlosflorencio.bomberman.graphics.IRender;
-import com.carlosflorencio.bomberman.graphics.Screen;
-import com.carlosflorencio.bomberman.input.Keyboard;
-import com.carlosflorencio.bomberman.level.FileLevel;
-import com.carlosflorencio.bomberman.level.Level;
+import com.project.bomberman.entities.Entity;
+import com.project.bomberman.entities.Message;
+import com.project.bomberman.entities.bomb.Bomb;
+import com.project.bomberman.entities.bomb.Explosion;
+import com.project.bomberman.entities.mob.Mob;
+import com.project.bomberman.entities.mob.Player;
+import com.project.bomberman.entities.tile.powerup.Powerup;
+import com.project.bomberman.exceptions.LoadLevelException;
+import com.project.bomberman.graphics.IRender;
+import com.project.bomberman.graphics.Screen;
+import com.project.bomberman.input.Keyboard;
+import com.project.bomberman.level.FileLevel;
+import com.project.bomberman.level.Level;
 
 public class Board implements IRender {
 

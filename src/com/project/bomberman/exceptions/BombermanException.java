@@ -1,4 +1,4 @@
-package com.carlosflorencio.bomberman.exceptions;
+package com.project.bomberman.exceptions;
 
 public class BombermanException extends Exception {
 	public BombermanException() {

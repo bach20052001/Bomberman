@@ -1,10 +1,10 @@
-package com.carlosflorencio.bomberman.entities.mob.enemy;
+package com.project.bomberman.entities.mob.enemy;
 
 
-import com.carlosflorencio.bomberman.Board;
-import com.carlosflorencio.bomberman.Game;
-import com.carlosflorencio.bomberman.entities.mob.enemy.ai.AIMedium;
-import com.carlosflorencio.bomberman.graphics.Sprite;
+import com.project.bomberman.Board;
+import com.project.bomberman.Game;
+import com.project.bomberman.entities.mob.enemy.ai.AIMedium;
+import com.project.bomberman.graphics.Sprite;
 
 public class Minvo extends Enemy {
 	

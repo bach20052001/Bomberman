@@ -1,9 +1,9 @@
-package com.carlosflorencio.bomberman.entities.tile;
+package com.project.bomberman.entities.tile;
 
-import com.carlosflorencio.bomberman.entities.Entity;
-import com.carlosflorencio.bomberman.graphics.Screen;
-import com.carlosflorencio.bomberman.graphics.Sprite;
-import com.carlosflorencio.bomberman.level.Coordinates;
+import com.project.bomberman.entities.Entity;
+import com.project.bomberman.graphics.Screen;
+import com.project.bomberman.graphics.Sprite;
+import com.project.bomberman.level.Coordinates;
 
 public abstract class Tile extends Entity {
 	

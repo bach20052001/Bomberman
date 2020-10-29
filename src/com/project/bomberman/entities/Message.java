@@ -1,8 +1,8 @@
-package com.carlosflorencio.bomberman.entities;
+package com.project.bomberman.entities;
 
 import java.awt.Color;
 
-import com.carlosflorencio.bomberman.graphics.Screen;
+import com.project.bomberman.graphics.Screen;
 
 public class Message extends Entity {
 

@@ -1,4 +1,4 @@
-package com.carlosflorencio.bomberman.gui.menu;
+package com.project.bomberman.gui.menu;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -9,9 +9,9 @@ import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 import javax.swing.KeyStroke;
 
-import com.carlosflorencio.bomberman.gui.CodeDialog;
-import com.carlosflorencio.bomberman.gui.Frame;
-import com.carlosflorencio.bomberman.gui.InfoDialog;
+import com.project.bomberman.gui.CodeDialog;
+import com.project.bomberman.gui.Frame;
+import com.project.bomberman.gui.InfoDialog;
 
 public class Game extends JMenu {
 

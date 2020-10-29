@@ -1,7 +1,7 @@
-package com.carlosflorencio.bomberman.level;
+package com.project.bomberman.level;
 
-import com.carlosflorencio.bomberman.Board;
-import com.carlosflorencio.bomberman.exceptions.LoadLevelException;
+import com.project.bomberman.Board;
+import com.project.bomberman.exceptions.LoadLevelException;
 
 public abstract class Level implements ILevel {
 

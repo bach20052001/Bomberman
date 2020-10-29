@@ -1,9 +1,9 @@
-package com.carlosflorencio.bomberman.entities;
+package com.project.bomberman.entities;
 
 import java.util.LinkedList;
 
-import com.carlosflorencio.bomberman.entities.tile.destroyable.DestroyableTile;
-import com.carlosflorencio.bomberman.graphics.Screen;
+import com.project.bomberman.entities.tile.destroyable.DestroyableTile;
+import com.project.bomberman.graphics.Screen;
 
 public class LayeredEntity extends Entity {
 	

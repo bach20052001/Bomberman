@@ -1,4 +1,4 @@
-package com.carlosflorencio.bomberman.gui.menu;
+package com.project.bomberman.gui.menu;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -12,8 +12,8 @@ import javax.swing.KeyStroke;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
-import com.carlosflorencio.bomberman.gui.Frame;
-import com.carlosflorencio.bomberman.Game;
+import com.project.bomberman.gui.Frame;
+import com.project.bomberman.Game;
 
 public class Options extends JMenu implements ChangeListener {
 

@@ -1,4 +1,4 @@
-package com.carlosflorencio.bomberman.graphics;
+package com.project.bomberman.graphics;
 
 public interface IRender {
 

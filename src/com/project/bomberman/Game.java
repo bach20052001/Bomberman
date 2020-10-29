@@ -1,4 +1,4 @@
-package com.carlosflorencio.bomberman;
+package com.project.bomberman;
 
 import java.awt.Canvas;
 import java.awt.Graphics;
@@ -7,10 +7,10 @@ import java.awt.image.BufferedImage;
 import java.awt.image.DataBufferInt;
 
 
-import com.carlosflorencio.bomberman.exceptions.BombermanException;
-import com.carlosflorencio.bomberman.graphics.Screen;
-import com.carlosflorencio.bomberman.gui.Frame;
-import com.carlosflorencio.bomberman.input.Keyboard;
+import com.project.bomberman.exceptions.BombermanException;
+import com.project.bomberman.graphics.Screen;
+import com.project.bomberman.gui.Frame;
+import com.project.bomberman.input.Keyboard;
 
 public class Game extends Canvas {
 	

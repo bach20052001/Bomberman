@@ -1,4 +1,4 @@
-package com.carlosflorencio.bomberman.gui.menu;
+package com.project.bomberman.gui.menu;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -9,9 +9,9 @@ import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 import javax.swing.KeyStroke;
 
-import com.carlosflorencio.bomberman.gui.Frame;
-import com.carlosflorencio.bomberman.Game;
-import com.carlosflorencio.bomberman.gui.InfoDialog;
+import com.project.bomberman.gui.Frame;
+import com.project.bomberman.Game;
+import com.project.bomberman.gui.InfoDialog;
 
 public class Help extends JMenu {
 
@@ -50,7 +50,7 @@ public class Help extends JMenu {
 			  }
 				  
 			  if(e.getActionCommand().equals("About")) {
-				  new InfoDialog(_frame, "About", "Version: " + Game.VERSION + "\n Author: Carlos Florêncio\n Website: www.carlosflorencio.com", JOptionPane.INFORMATION_MESSAGE);
+				  new InfoDialog(_frame, "About", "Version: " + Game.VERSION + "\n Author: Carlos Florï¿½ncio\n Website: www.carlosflorencio.com", JOptionPane.INFORMATION_MESSAGE);
 			  }
 			  
 		  }

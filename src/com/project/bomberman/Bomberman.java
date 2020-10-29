@@ -1,7 +1,7 @@
-package com.carlosflorencio.bomberman;
+package com.project.bomberman;
 
-import com.carlosflorencio.bomberman.exceptions.BombermanException;
-import com.carlosflorencio.bomberman.gui.Frame;
+import com.project.bomberman.exceptions.BombermanException;
+import com.project.bomberman.gui.Frame;
 
 public class Bomberman {
 	

@@ -1,6 +1,6 @@
-package com.carlosflorencio.bomberman.level;
+package com.project.bomberman.level;
 
-import com.carlosflorencio.bomberman.Game;
+import com.project.bomberman.Game;
 
 public class Coordinates {
 	

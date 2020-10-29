@@ -1,4 +1,4 @@
-package com.carlosflorencio.bomberman.entities.mob.enemy.ai;
+package com.project.bomberman.entities.mob.enemy.ai;
 
 import java.util.Random;
 

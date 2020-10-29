@@ -1,7 +1,7 @@
-package com.carlosflorencio.bomberman.entities.mob.enemy.ai;
+package com.project.bomberman.entities.mob.enemy.ai;
 
-import com.carlosflorencio.bomberman.entities.mob.Player;
-import com.carlosflorencio.bomberman.entities.mob.enemy.Enemy;
+import com.project.bomberman.entities.mob.Player;
+import com.project.bomberman.entities.mob.enemy.Enemy;
 
 public class AIMedium extends AI {
 	Player _player;

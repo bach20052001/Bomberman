@@ -1,4 +1,4 @@
-package com.carlosflorencio.bomberman.entities;
+package com.project.bomberman.entities;
 
 
 public abstract class AnimatedEntitiy extends Entity {

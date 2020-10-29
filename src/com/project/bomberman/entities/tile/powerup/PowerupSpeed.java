@@ -1,9 +1,9 @@
-package com.carlosflorencio.bomberman.entities.tile.powerup;
+package com.project.bomberman.entities.tile.powerup;
 
-import com.carlosflorencio.bomberman.Game;
-import com.carlosflorencio.bomberman.entities.Entity;
-import com.carlosflorencio.bomberman.entities.mob.Player;
-import com.carlosflorencio.bomberman.graphics.Sprite;
+import com.project.bomberman.Game;
+import com.project.bomberman.entities.Entity;
+import com.project.bomberman.entities.mob.Player;
+import com.project.bomberman.graphics.Sprite;
 
 public class PowerupSpeed extends Powerup {
 

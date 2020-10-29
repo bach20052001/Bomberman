@@ -1,8 +1,8 @@
-package com.carlosflorencio.bomberman.gui.menu;
+package com.project.bomberman.gui.menu;
 
 import javax.swing.JMenuBar;
 
-import com.carlosflorencio.bomberman.gui.Frame;
+import com.project.bomberman.gui.Frame;
 
 public class Menu extends JMenuBar {
 	

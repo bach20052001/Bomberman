@@ -1,9 +1,9 @@
-package com.carlosflorencio.bomberman.entities.mob;
+package com.project.bomberman.entities.mob;
 
-import com.carlosflorencio.bomberman.Board;
-import com.carlosflorencio.bomberman.Game;
-import com.carlosflorencio.bomberman.entities.AnimatedEntitiy;
-import com.carlosflorencio.bomberman.graphics.Screen;
+import com.project.bomberman.Board;
+import com.project.bomberman.Game;
+import com.project.bomberman.entities.AnimatedEntitiy;
+import com.project.bomberman.graphics.Screen;
 
 public abstract class Mob extends AnimatedEntitiy {
 	

@@ -1,12 +1,12 @@
-package com.carlosflorencio.bomberman.gui;
+package com.project.bomberman.gui;
 
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 
 import javax.swing.JPanel;
 
-import com.carlosflorencio.bomberman.Game;
-import com.carlosflorencio.bomberman.exceptions.BombermanException;
+import com.project.bomberman.Game;
+import com.project.bomberman.exceptions.BombermanException;
 
 public class GamePanel extends JPanel {
 

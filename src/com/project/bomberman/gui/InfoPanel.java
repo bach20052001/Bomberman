@@ -1,4 +1,4 @@
-package com.carlosflorencio.bomberman.gui;
+package com.project.bomberman.gui;
 
 import java.awt.Color;
 import java.awt.Dimension;
@@ -7,7 +7,7 @@ import java.awt.GridLayout;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-import com.carlosflorencio.bomberman.Game;
+import com.project.bomberman.Game;
 
 public class InfoPanel extends JPanel {
 	

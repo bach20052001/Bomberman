@@ -1,9 +1,9 @@
-package com.carlosflorencio.bomberman.entities;
+package com.project.bomberman.entities;
 
-import com.carlosflorencio.bomberman.graphics.IRender;
-import com.carlosflorencio.bomberman.graphics.Screen;
-import com.carlosflorencio.bomberman.graphics.Sprite;
-import com.carlosflorencio.bomberman.level.Coordinates;
+import com.project.bomberman.graphics.IRender;
+import com.project.bomberman.graphics.Screen;
+import com.project.bomberman.graphics.Sprite;
+import com.project.bomberman.level.Coordinates;
 
 public abstract class Entity implements IRender {
 

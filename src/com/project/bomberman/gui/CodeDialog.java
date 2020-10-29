@@ -1,4 +1,4 @@
-package com.carlosflorencio.bomberman.gui;
+package com.project.bomberman.gui;
 
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;

@@ -1,4 +1,4 @@
-package com.carlosflorencio.bomberman.input;
+package com.project.bomberman.input;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;

@@ -1,12 +1,12 @@
-package com.carlosflorencio.bomberman.entities.tile.destroyable;
+package com.project.bomberman.entities.tile.destroyable;
 
 
-import com.carlosflorencio.bomberman.entities.Entity;
-import com.carlosflorencio.bomberman.entities.bomb.DirectionalExplosion;
-import com.carlosflorencio.bomberman.entities.mob.enemy.Kondoria;
-import com.carlosflorencio.bomberman.graphics.Screen;
-import com.carlosflorencio.bomberman.graphics.Sprite;
-import com.carlosflorencio.bomberman.level.Coordinates;
+import com.project.bomberman.entities.Entity;
+import com.project.bomberman.entities.bomb.DirectionalExplosion;
+import com.project.bomberman.entities.mob.enemy.Kondoria;
+import com.project.bomberman.graphics.Screen;
+import com.project.bomberman.graphics.Sprite;
+import com.project.bomberman.level.Coordinates;
 
 public class BrickTile extends DestroyableTile {
 	

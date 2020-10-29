@@ -1,22 +1,22 @@
-package com.carlosflorencio.bomberman.entities.mob;
+package com.project.bomberman.entities.mob;
 
 import java.awt.Color;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-import com.carlosflorencio.bomberman.Board;
-import com.carlosflorencio.bomberman.Game;
-import com.carlosflorencio.bomberman.entities.Entity;
-import com.carlosflorencio.bomberman.entities.Message;
-import com.carlosflorencio.bomberman.entities.bomb.Bomb;
-import com.carlosflorencio.bomberman.entities.bomb.DirectionalExplosion;
-import com.carlosflorencio.bomberman.entities.mob.enemy.Enemy;
-import com.carlosflorencio.bomberman.entities.tile.powerup.Powerup;
-import com.carlosflorencio.bomberman.graphics.Screen;
-import com.carlosflorencio.bomberman.graphics.Sprite;
-import com.carlosflorencio.bomberman.input.Keyboard;
-import com.carlosflorencio.bomberman.level.Coordinates;
+import com.project.bomberman.Board;
+import com.project.bomberman.Game;
+import com.project.bomberman.entities.Entity;
+import com.project.bomberman.entities.Message;
+import com.project.bomberman.entities.bomb.Bomb;
+import com.project.bomberman.entities.bomb.DirectionalExplosion;
+import com.project.bomberman.entities.mob.enemy.Enemy;
+import com.project.bomberman.entities.tile.powerup.Powerup;
+import com.project.bomberman.graphics.Screen;
+import com.project.bomberman.graphics.Sprite;
+import com.project.bomberman.input.Keyboard;
+import com.project.bomberman.level.Coordinates;
 
 public class Player extends Mob {
 	
