@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>com.project.bomberman.entities.mob.enemy</OriginalElement>
+  <nodes>
+    <node x="184.0" y="518.0">com.project.bomberman.entities.mob.enemy.Doll</node>
+    <node x="357.0" y="518.0">com.project.bomberman.entities.mob.enemy.Oneal</node>
+    <node x="739.0" y="518.0">com.project.bomberman.entities.mob.enemy.Balloom</node>
+    <node x="305.5" y="0.0">com.project.bomberman.entities.mob.enemy.Enemy</node>
+    <node x="0.0" y="659.0">com.project.bomberman.entities.mob.enemy.ai</node>
+    <node x="539.0" y="518.0">com.project.bomberman.entities.mob.enemy.Kondoria</node>
+    <node x="0.0" y="518.0">com.project.bomberman.entities.mob.enemy.Minvo</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="com.project.bomberman.entities.mob.enemy.Balloom" target="com.project.bomberman.entities.mob.enemy.Enemy">
+      <point x="0.0" y="-48.0" />
+      <point x="827.0" y="488.0" />
+      <point x="544.0" y="488.0" />
+      <point x="106.0" y="234.0" />
+    </edge>
+    <edge source="com.project.bomberman.entities.mob.enemy.Doll" target="com.project.bomberman.entities.mob.enemy.Enemy">
+      <point x="0.0" y="-48.0" />
+      <point x="260.5" y="498.0" />
+      <point x="385.0" y="498.0" />
+      <point x="-53.0" y="234.0" />
+    </edge>
+    <edge source="com.project.bomberman.entities.mob.enemy.Minvo" target="com.project.bomberman.entities.mob.enemy.Enemy">
+      <point x="0.0" y="-48.0" />
+      <point x="82.0" y="488.0" />
+      <point x="332.0" y="488.0" />
+      <point x="-106.0" y="234.0" />
+    </edge>
+    <edge source="com.project.bomberman.entities.mob.enemy.Kondoria" target="com.project.bomberman.entities.mob.enemy.Enemy">
+      <point x="0.0" y="-48.0" />
+      <point x="629.0" y="498.0" />
+      <point x="491.0" y="498.0" />
+      <point x="53.0" y="234.0" />
+    </edge>
+    <edge source="com.project.bomberman.entities.mob.enemy.Oneal" target="com.project.bomberman.entities.mob.enemy.Enemy">
+      <point x="0.0" y="-48.0" />
+      <point x="0.0" y="234.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.9165526675786594" x="457.5" y="355.5" />
+  <SelectedNodes>
+    <node>com.project.bomberman.entities.mob.enemy.Minvo</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Constructors</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+    <Category>Inner Classes</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

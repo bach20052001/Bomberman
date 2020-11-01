@@ -19,7 +19,6 @@ public class PowerupSpeed extends Powerup {
 			remove();
 			return true;
 		}
-		
 		return false;
 	}
 	
@@ -28,7 +27,4 @@ public class PowerupSpeed extends Powerup {
 		_active = true;
 		Game.addPlayerSpeed(0.1);
 	}
-	
-
-
 }

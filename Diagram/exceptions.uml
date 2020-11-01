@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>com.project.bomberman.exceptions</OriginalElement>
+  <nodes>
+    <node x="0.0" y="0.0">com.project.bomberman.exceptions.BombermanException</node>
+    <node x="6.0" y="170.0">com.project.bomberman.exceptions.LoadLevelException</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="com.project.bomberman.exceptions.LoadLevelException" target="com.project.bomberman.exceptions.BombermanException">
+      <point x="0.0" y="-60.0" />
+      <point x="0.0" y="60.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="135.5" y="145.0" />
+  <SelectedNodes>
+    <node>com.project.bomberman.exceptions.LoadLevelException</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Constructors</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+    <Category>Inner Classes</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

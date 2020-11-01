@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>com.project.bomberman.gui</OriginalElement>
+  <nodes>
+    <node x="500.0" y="445.0">com.project.bomberman.gui.GamePanel</node>
+    <node x="308.0" y="445.0">com.project.bomberman.gui.InfoPanel</node>
+    <node x="0.0" y="0.0">com.project.bomberman.gui.Frame</node>
+    <node x="0.0" y="445.0">com.project.bomberman.gui.InfoDialog</node>
+    <node x="267.0" y="0.0">com.project.bomberman.gui.CodeDialog</node>
+    <node x="698.0" y="445.0">com.project.bomberman.gui.menu</node>
+  </nodes>
+  <notes />
+  <edges />
+  <settings layout="Hierarchic Group" zoom="0.9115646258503401" x="413.0" y="357.5" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Constructors</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

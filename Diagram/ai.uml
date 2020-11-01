@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>com.project.bomberman.entities.mob.enemy.ai</OriginalElement>
+  <nodes>
+    <node x="0.0" y="146.0">com.project.bomberman.entities.mob.enemy.ai.AIMedium</node>
+    <node x="214.0" y="221.0">com.project.bomberman.entities.mob.enemy.ai.AILow</node>
+    <node x="113.0" y="0.0">com.project.bomberman.entities.mob.enemy.ai.AI</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="com.project.bomberman.entities.mob.enemy.ai.AIMedium" target="com.project.bomberman.entities.mob.enemy.ai.AI">
+      <point x="0.0" y="-102.0" />
+      <point x="97.0" y="121.0" />
+      <point x="155.5" y="121.0" />
+      <point x="-42.5" y="48.0" />
+    </edge>
+    <edge source="com.project.bomberman.entities.mob.enemy.ai.AILow" target="com.project.bomberman.entities.mob.enemy.ai.AI">
+      <point x="0.0" y="-27.0" />
+      <point x="299.0" y="121.0" />
+      <point x="240.5" y="121.0" />
+      <point x="42.5" y="48.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="192.0" y="175.0" />
+  <SelectedNodes>
+    <node>com.project.bomberman.entities.mob.enemy.ai.AI</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Constructors</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+    <Category>Inner Classes</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

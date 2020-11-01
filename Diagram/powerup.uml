@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>com.project.bomberman.entities.tile.powerup</OriginalElement>
+  <nodes>
+    <node x="501.0" y="254.0">com.project.bomberman.entities.tile.powerup.PowerupBombs</node>
+    <node x="249.0" y="254.0">com.project.bomberman.entities.tile.powerup.PowerupFlames</node>
+    <node x="0.0" y="254.0">com.project.bomberman.entities.tile.powerup.PowerupSpeed</node>
+    <node x="267.0" y="0.0">com.project.bomberman.entities.tile.powerup.Powerup</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="com.project.bomberman.entities.tile.powerup.PowerupFlames" target="com.project.bomberman.entities.tile.powerup.Powerup">
+      <point x="0.0" y="-59.0" />
+      <point x="0.0" y="102.0" />
+    </edge>
+    <edge source="com.project.bomberman.entities.tile.powerup.PowerupBombs" target="com.project.bomberman.entities.tile.powerup.Powerup">
+      <point x="0.0" y="-59.0" />
+      <point x="617.0" y="229.0" />
+      <point x="430.3333333333333" y="229.0" />
+      <point x="65.33333333333331" y="102.0" />
+    </edge>
+    <edge source="com.project.bomberman.entities.tile.powerup.PowerupSpeed" target="com.project.bomberman.entities.tile.powerup.Powerup">
+      <point x="0.0" y="-59.0" />
+      <point x="114.5" y="229.0" />
+      <point x="299.6666666666667" y="229.0" />
+      <point x="-65.33333333333331" y="102.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="366.5" y="186.0" />
+  <SelectedNodes>
+    <node>com.project.bomberman.entities.tile.powerup.PowerupBombs</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Constructors</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+    <Category>Inner Classes</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>com.project.bomberman.entities.mob</OriginalElement>
+  <nodes>
+    <node x="0.0" y="713.0">com.project.bomberman.entities.mob.enemy</node>
+    <node x="156.0" y="472.0">com.project.bomberman.entities.mob.Player</node>
+    <node x="53.75" y="0.0">com.project.bomberman.entities.mob.Mob</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="com.project.bomberman.entities.mob.Player" target="com.project.bomberman.entities.mob.Mob">
+      <point x="0.0" y="-267.0" />
+      <point x="272.5" y="447.0" />
+      <point x="228.5" y="447.0" />
+      <point x="58.25" y="211.0" />
+    </edge>
+    <edge source="com.project.bomberman.entities.mob.enemy" target="com.project.bomberman.entities.mob.Mob">
+      <point x="0.0" y="-26.0" />
+      <point x="68.0" y="447.0" />
+      <point x="112.0" y="447.0" />
+      <point x="-58.25" y="211.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.6530214424951267" x="194.5" y="503.0" />
+  <SelectedNodes>
+    <node>com.project.bomberman.entities.mob.Mob</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Constructors</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+    <Category>Inner Classes</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

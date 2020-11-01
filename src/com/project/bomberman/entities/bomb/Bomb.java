@@ -27,8 +27,8 @@ public class Bomb extends AnimatedEntity {
 		_board = board;
 		_sprite = Sprite.bomb;
 	}
-	
-	@Override
+
+ @Override
 	public void update() {
 		if(_timeToExplode > 0) 
 			_timeToExplode--;
