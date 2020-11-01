@@ -15,6 +15,9 @@ public class PortalTile extends Tile {
 		_board = board;
 	}
 
+	/**
+	 * Xử lý va chạm với người chơi để qua màn
+	 */
 	@Override
 	public boolean collide(Entity e) {
 		if(e instanceof Player ) {

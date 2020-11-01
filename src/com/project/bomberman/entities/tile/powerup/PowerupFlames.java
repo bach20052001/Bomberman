@@ -10,7 +10,9 @@ public class PowerupFlames extends Powerup {
 	public PowerupFlames(int x, int y, int level, Sprite sprite) {
 		super(x, y, level, sprite);
 	}
-	
+	/**
+	 * Xử lý va chạm với người chơi khi nhặt vật phẩm
+	 */
 	@Override
 	public boolean collide(Entity e) {
 		

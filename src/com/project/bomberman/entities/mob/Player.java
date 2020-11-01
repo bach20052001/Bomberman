@@ -91,7 +91,7 @@ public class Player extends Mob {
 	}
 
 
-	/*
+	/**
 	|--------------------------------------------------------------------------
 	| Mob Unique
 	|--------------------------------------------------------------------------
@@ -128,7 +128,7 @@ public class Player extends Mob {
 		
 	}
 	
-	/*
+	/**
 	|--------------------------------------------------------------------------
 	| Mob Colide & Kill
 	|--------------------------------------------------------------------------
@@ -211,7 +211,12 @@ public class Player extends Mob {
 			_x += xa;
 		}
 	}
-	
+
+	/**
+	 * Xử lý va chạm cho người chơi
+	 * @param e
+	 * @return
+	 */
 	@Override
 	public boolean collide(Entity e) {
 		if(e instanceof DirectionalExplosion) {

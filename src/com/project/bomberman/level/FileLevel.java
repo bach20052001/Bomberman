@@ -27,7 +27,13 @@ public class FileLevel extends Level {
 	public FileLevel(String path, Board board) throws LoadLevelException {
 		super(path, board);
 	}
-	
+
+	/**
+	 * Đọc các thực thể của từng level từ levels/....txt
+	 * @param path
+	 * @throws LoadLevelException
+	 */
+
 	@Override
 	public void loadLevel(String path) throws LoadLevelException {
 		try {
@@ -63,7 +69,9 @@ public class FileLevel extends Level {
 			}
 		}
 	}
-	
+
+
+	//Tạo map từ file txt
 	public void addLevelEntity(char c, int x, int y) {
 		int pos = x + y * getWidth();
 		

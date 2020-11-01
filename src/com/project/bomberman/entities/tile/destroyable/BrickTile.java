@@ -32,7 +32,12 @@ public class BrickTile extends DestroyableTile {
 		else
 			screen.renderEntity( x, y, this);
 	}
-	
+
+	/**
+	 * Xử lý va chạm với boom
+	 * @param e
+	 * @return
+	 */
 	@Override
 	public boolean collide(Entity e) {
 

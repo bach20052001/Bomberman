@@ -17,7 +17,7 @@ public class Kondoria extends Enemy {
 		_ai = new AIMedium(_board.getPlayer(), this); //TODO: implement AIHigh 
 		_direction  = _ai.calculateDirection();
 	}
-	/*
+	/**
 	|--------------------------------------------------------------------------
 	| Mob Sprite
 	|--------------------------------------------------------------------------

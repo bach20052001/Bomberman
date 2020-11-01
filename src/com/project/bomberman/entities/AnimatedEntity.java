@@ -2,7 +2,7 @@ package com.project.bomberman.entities;
 
 
 public abstract class AnimatedEntity extends Entity {
-
+    //Vật thể các animate
 	protected int _animate = 0;
 	protected final int MAX_ANIMATE = 7500; //save the animation status and dont let this get too big
 	

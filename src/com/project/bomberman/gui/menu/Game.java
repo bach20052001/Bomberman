@@ -18,15 +18,16 @@ public class Game extends JMenu {
         super("Game");
         this.frame = frame;
 
-        /*
+        /**
          * New Game
          */
+
         JMenuItem newgame = new JMenuItem("New Game");
         newgame.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_N, InputEvent.CTRL_MASK));
         newgame.addActionListener(new MenuActionListener(frame));
         add(newgame);
 
-        /*
+        /**
          * Scores
          */
         JMenuItem scores = new JMenuItem("Top Scores");
@@ -34,7 +35,7 @@ public class Game extends JMenu {
         scores.addActionListener(new MenuActionListener(frame));
         add(scores);
 
-        /*
+        /**
          * Codes
          */
         JMenuItem codes = new JMenuItem("Codes");

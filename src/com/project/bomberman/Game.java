@@ -26,11 +26,12 @@ public class Game extends Canvas {
 
 	public static final String TITLE = "Bomberman " + VERSION;
 
-	//initial configs
+	//initial configs for player
 	private static final int BOMBRATE = 1;
 	private static final int BOMBRADIUS = 1;
 	private static final double PLAYERSPEED = 1.0;
-	
+
+
 	public static final int TIME = 200;
 	public static final int POINTS = 0;
 	public static final int LIVES = 3;
@@ -164,11 +165,12 @@ public class Game extends Canvas {
 		}
 	}
 	
-	/*
+	/**
 	|--------------------------------------------------------------------------
 	| Getters & Setters
 	|--------------------------------------------------------------------------
 	 */
+
 	public static double getPlayerSpeed() {
 		return playerSpeed;
 	}

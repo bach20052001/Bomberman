@@ -23,19 +23,53 @@ public class Board implements IRender {
 
     private final List<Message> _messages = new ArrayList<>();
     public int _width, _height;
+	/**
+	 * Thực thể không di chuyển
+	 */
     public Entity[] _entities;
-    public List<Mob> _mobs = new ArrayList<>();
+	/**
+	 * Thực thể di chuyển
+	 */
+    public List<Mob> _mobs = new ArrayList<>();/**
+	 /**
+	 * Màn chơi
+	 */
     protected Level _level;
+	/**
+	 */
     protected Game _game;
+	/**
+	 * Input từ keyboard
+	 */
     protected Keyboard _input;
     protected Screen _screen;
+	/**
+	 * Bomb
+	 */
     protected List<Bomb> _bombs = new ArrayList<>();
     private int _screenToShow = -1; //1:endgame, 2:changelevel, 3:paused
-
+	/**
+	 * Thời gian
+	 */
     private int _time = Game.TIME;
+	/**
+	 * Điểm
+	 */
     private int _points = Game.POINTS;
+	/**
+	 * Mạng
+	 */
     private int _lives = Game.LIVES;
 
+
+    /**
+	 *
+	*/
+	/**
+	 * @param game
+	 * @param input
+	 * @param screen
+	 */
     public Board(Game game, Keyboard input, Screen screen) {
         _game = game;
         _input = input;
@@ -43,11 +77,17 @@ public class Board implements IRender {
 		
 		changeLevel(1); //start in level 1
 	}
-	
-	/*
+
+
+	/**
 	|--------------------------------------------------------------------------
 	| Render & Update
 	|--------------------------------------------------------------------------
+
+	 */
+	/**
+	 * Update được gọi liên tục trong mỗi khung hình
+	 *
 	 */
 	@Override
 	public void update() {
@@ -65,7 +105,10 @@ public class Board implements IRender {
         }
 	}
 
-
+	/**
+	 * Render xuất hình ảnh ra màn hình
+	 *
+	 */
 	@Override
 	public void render(Screen screen) {
 		if( _game.isPaused() ) return;
@@ -84,14 +127,15 @@ public class Board implements IRender {
 		
 		renderBombs(screen);
 		renderMobs(screen);
-		
 	}
-	
-	/*
+
+
+	/**
 	|--------------------------------------------------------------------------
 	| ChangeLevel
 	|--------------------------------------------------------------------------
 	 */
+
 	public void newGame() {
 		resetProperties();
 		changeLevel(1);
@@ -108,22 +152,30 @@ public class Board implements IRender {
 		_game.bombRate = 1;
 		
 	}
-
+	/**
+	 * Về level đầu
+	 */
 	public void restartLevel() {
 		changeLevel(_level.getLevel());
 	}
-	
+	/**
+	 * Hack nextLevel
+	 */
 	public void nextLevel() {
 		if (_level.getLevel() <= 5){changeLevel(_level.getLevel() + 1);}
 		else{
 			endGame();
 		}
 	}
-
+	/**
+	 * Hack mạng
+	 */
 	public void setNeverDie(){
 		_lives = 1000000;
 	}
-
+	/**
+	 * Hack prevLevel
+	 */
 	public void prevLevel() {
 		if (_level.getLevel() > 1){
 			changeLevel(_level.getLevel() - 1);
@@ -169,22 +221,32 @@ public class Board implements IRender {
 		return false;
 	}
 	
-	/*
+	/**
 	|--------------------------------------------------------------------------
 	| Detections
 	|--------------------------------------------------------------------------
+	 */
+
+	/**
+	 * Kiểm tra thời gian
 	 */
 	protected void detectEndGame() {
 		if(_time <= 0)
 			restartLevel();
 	}
-	
+
+	/**
+	 * GameOver
+	 */
 	public void endGame() {
 		_screenToShow = 1;
 		_game.resetScreenDelay();
 		_game.pause();
 	}
-	
+
+	/**
+	 * Kiểm tra kẻ địch trên sàn
+	 */
 	public boolean detectNoEnemies() {
         int total = 0;
         for (Mob mob : _mobs) {
@@ -195,7 +257,7 @@ public class Board implements IRender {
         return total == 0;
     }
 	
-	/*
+	/**
 	|--------------------------------------------------------------------------
 	| Pause & Resume
 	|--------------------------------------------------------------------------
@@ -213,11 +275,12 @@ public class Board implements IRender {
 		_game.run();
 	}
 	
-	/*
+	/**
 	|--------------------------------------------------------------------------
 	| Screens
 	|--------------------------------------------------------------------------
 	 */
+
 	public void drawScreen(Graphics g) {
 		switch (_screenToShow) {
 			case 1:
@@ -232,11 +295,12 @@ public class Board implements IRender {
 		}
 	}
 	
-	/*
+	/**
 	|--------------------------------------------------------------------------
 	| Getters And Setters
 	|--------------------------------------------------------------------------
 	 */
+
 	public Entity getEntity(double x, double y, Mob m) {
 
         Entity res;
@@ -338,7 +402,7 @@ public class Board implements IRender {
 		return _entities[(int)x + (int)y * _level.getWidth()];
 	}
 	
-	/*
+	/**
 	|--------------------------------------------------------------------------
 	| Adds and Removes
 	|--------------------------------------------------------------------------
@@ -359,7 +423,7 @@ public class Board implements IRender {
 		_messages.add(e);
 	}
 	
-	/*
+	/**
 	|--------------------------------------------------------------------------
 	| Renders
 	|--------------------------------------------------------------------------
@@ -391,7 +455,7 @@ public class Board implements IRender {
         }
     }
 	
-	/*
+	/**
 	|--------------------------------------------------------------------------
 	| Updates
 	|--------------------------------------------------------------------------
@@ -432,7 +496,7 @@ public class Board implements IRender {
         }
     }
 	
-	/*
+	/**
 	|--------------------------------------------------------------------------
 	| Getters & Setters
 	|--------------------------------------------------------------------------

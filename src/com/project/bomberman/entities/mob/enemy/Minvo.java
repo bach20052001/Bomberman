@@ -17,7 +17,7 @@ public class Minvo extends Enemy {
 		_ai = new AIMedium(_board.getPlayer(), this);
 		_direction  = _ai.calculateDirection();
 	}
-	/*
+	/**
 	|--------------------------------------------------------------------------
 	| Mob Sprite
 	|--------------------------------------------------------------------------

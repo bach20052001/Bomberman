@@ -14,11 +14,15 @@ public class Bomb extends AnimatedEntity {
 
 	//options
 	protected double _timeToExplode = 120; //2 seconds
+	//Thời gian vụ nổ biến mất
 	public int _timeAfter = 20; //time to explosions disapear
 	
 	protected Board _board;
+	// Cho phép đi qua hay k ?
 	protected boolean _allowedToPassThru = true;
+	//
 	protected DirectionalExplosion[] _explosions = null;
+	// Đã nổ hay chưa
 	protected boolean _exploded = false;
 	
 	public Bomb(int x, int y,Board board) {
@@ -76,7 +80,9 @@ public class Bomb extends AnimatedEntity {
 	public void explode() {
 		_timeToExplode = 0;
 	}
-	
+
+
+	// NỔ
 	protected void explosion() {
 		_allowedToPassThru = true;
 		_exploded = true;
@@ -108,8 +114,12 @@ public class Bomb extends AnimatedEntity {
 //	public boolean isExploded() {
 //		return _exploded;
 //	}
-	
 
+	/**
+	 * Xử lý va chạm bằng collider
+	 * @param e
+	 * @return
+	 */
 	@Override
 	public boolean collide(Entity e) {
 		

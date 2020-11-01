@@ -4,7 +4,9 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
 public class Keyboard implements KeyListener {
-
+    /**
+     * Xử lý để nhận input từ bàn phím
+     */
     private final boolean[] keys = new boolean[200]; //120 is enough to this game
     public boolean up, down, left, right, space ,enter ,backspace ,backtick;
 

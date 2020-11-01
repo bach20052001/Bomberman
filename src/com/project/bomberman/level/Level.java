@@ -9,6 +9,7 @@ public abstract class Level implements ILevel {
 	protected String[] _lineTiles;
 	protected Board _board;
 
+	// code để chuyển màn khác
 	private static String[] codes = { //TODO: change this code system to actualy load the code from each level.txt
 		"JumpToLevel1",
 		"JumpToLevel2",
@@ -33,6 +34,8 @@ public abstract class Level implements ILevel {
 	| Codes
 	|--------------------------------------------------------------------------
 	 */
+
+	// check code xem hợp lệ k ??
 	public int validCode(String str) {
 		for (int i = 0; i < codes.length; i++) {
 			if (codes[i].equals(str)) {

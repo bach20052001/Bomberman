@@ -7,7 +7,10 @@ import java.net.URL;
 
 public class SpriteSheet {
 
-    public static SpriteSheet tiles = new SpriteSheet("/textures/classic.png", 256);
+
+	//Load texture từ textures/classic.png
+
+	public static SpriteSheet tiles = new SpriteSheet("/textures/classic.png", 256);
     public final int SIZE;
     private final String _path;
     public int[] _pixels;
