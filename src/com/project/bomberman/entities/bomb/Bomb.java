@@ -62,14 +62,14 @@ public class Bomb extends AnimatedEntitiy {
 	}
 	
 	public void renderExplosions(Screen screen) {
-		for (int i = 0; i < _explosions.length; i++) {
-			_explosions[i].render(screen);
+		for (DirectionalExplosion explosion : _explosions) {
+			explosion.render(screen);
 		}
 	}
 	
 	public void updateExplosions() {
-		for (int i = 0; i < _explosions.length; i++) {
-			_explosions[i].update();
+		for (DirectionalExplosion explosion : _explosions) {
+			explosion.update();
 		}
 	}
 	
@@ -94,20 +94,20 @@ public class Bomb extends AnimatedEntitiy {
 	}
 	
 	public Explosion explosionAt(int x, int y) {
-		if(!_exploded) return null;
-		
-		for (int i = 0; i < _explosions.length; i++) {
-			if(_explosions[i] == null) return null;
-			Explosion e = _explosions[i].explosionAt(x, y);
-			if(e != null) return e;
+		if (!_exploded) return null;
+
+		for (DirectionalExplosion explosion : _explosions) {
+			if (explosion == null) return null;
+			Explosion e = explosion.explosionAt(x, y);
+			if (e != null) return e;
 		}
-		
+
 		return null;
 	}
 	
-	public boolean isExploded() {
-		return _exploded;
-	}
+//	public boolean isExploded() {
+//		return _exploded;
+//	}
 	
 
 	@Override

@@ -35,15 +35,12 @@ public class BrickTile extends DestroyableTile {
 	
 	@Override
 	public boolean collide(Entity e) {
-		
-		if(e instanceof DirectionalExplosion)
-			destroy();
-		
-		if(e instanceof Kondoria)
-			return true;
-			
-		return false;
-	}
+
+        if (e instanceof DirectionalExplosion)
+            destroy();
+
+        return e instanceof Kondoria;
+    }
 	
 	
 }

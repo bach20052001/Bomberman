@@ -1,33 +1,27 @@
 package com.project.bomberman.gui;
 
-import java.awt.BorderLayout;
+import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
 
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
-import javax.swing.JTextField;
-
 public class CodeDialog implements WindowListener, ActionListener {
 
-	private Frame _frame;
-	private JFrame _dialog;
-	private JTextField _code;
-	private boolean _valid = false;
+    private final Frame _frame;
+    private final JFrame _dialog;
+    private final JTextField _code;
+    private boolean _valid = false;
 
-	public CodeDialog(Frame f) {
-		_frame = f;
+    public CodeDialog(Frame f) {
+        _frame = f;
 
-		_dialog = new JFrame("Enter a Valid Code");
-		final JButton button = new JButton("Load!");
-		button.addActionListener(this);
+        _dialog = new JFrame("Enter a Valid Code");
+        final JButton button = new JButton("Load!");
+        button.addActionListener(this);
 
-		JPanel pane = new JPanel(new BorderLayout());
+        JPanel pane = new JPanel(new BorderLayout());
 		_code = new JTextField("code");
 
 		pane.add(new JLabel("Code: "), BorderLayout.WEST);
@@ -53,9 +47,9 @@ public class CodeDialog implements WindowListener, ActionListener {
 
 	@Override
 	public void windowClosed(WindowEvent e) {
-		if(_valid == false)
-			_frame.resumeGame();
-	}
+        if (!_valid)
+            _frame.resumeGame();
+    }
 
 	@Override
 	public void windowIconified(WindowEvent e) {

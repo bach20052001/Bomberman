@@ -1,10 +1,5 @@
 package com.project.bomberman.entities.mob;
 
-import java.awt.Color;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-
 import com.project.bomberman.Board;
 import com.project.bomberman.Game;
 import com.project.bomberman.entities.Entity;
@@ -18,44 +13,48 @@ import com.project.bomberman.graphics.Sprite;
 import com.project.bomberman.input.Keyboard;
 import com.project.bomberman.level.Coordinates;
 
+import java.awt.*;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
 public class Player extends Mob {
-	
-	private List<Bomb> _bombs;
-	protected Keyboard _input;
-	
-	protected int _timeBetweenPutBombs = 0;
-	
-	public static List<Powerup> _powerups = new ArrayList<Powerup>();
-	
-	
-	public Player(int x, int y, Board board) {
-		super(x, y, board);
-		_bombs = _board.getBombs();
-		_input = _board.getInput();
-		_sprite = Sprite.player_right;
-	}
-	
-	
-	/*
-	|--------------------------------------------------------------------------
-	| Update & Render
-	|--------------------------------------------------------------------------
-	 */
+
+    public static List<Powerup> _powerups = new ArrayList<>();
+    private final List<Bomb> _bombs;
+    protected Keyboard _input;
+    protected int _timeBetweenPutBombs = 0;
+
+
+    public Player(int x, int y, Board board) {
+        super(x, y, board);
+        _bombs = _board.getBombs();
+        _input = _board.getInput();
+        _sprite = Sprite.player_right;
+    }
+
+
+    /*
+    |--------------------------------------------------------------------------
+    | Update & Render
+    |--------------------------------------------------------------------------
+     */
 	@Override
 	public void update() {
-		clearBombs();
-		if(_alive == false) {
-			afterKill();
-			return;
-		}
-		
-		if(_timeBetweenPutBombs < -7500) _timeBetweenPutBombs = 0; else _timeBetweenPutBombs--; //dont let this get tooo big
-		
-		animate();
-		
-		calculateMove();
-		
-		detectPlaceBomb();
+        clearBombs();
+        if (!_alive) {
+            afterKill();
+            return;
+        }
+
+        if (_timeBetweenPutBombs < -7500) _timeBetweenPutBombs = 0;
+        else _timeBetweenPutBombs--; //dont let this get tooo big
+
+        animate();
+
+        calculateMove();
+
+        detectPlaceBomb();
 	}
 	
 	@Override
@@ -228,10 +227,10 @@ public class Player extends Mob {
 	public void clearUsedPowerups() {
 		Powerup p;
 		for (int i = 0; i < _powerups.size(); i++) {
-			p = _powerups.get(i);
-			if(p.isActive() == false)
-				_powerups.remove(i);
-		}
+            p = _powerups.get(i);
+            if (!p.isActive())
+                _powerups.remove(i);
+        }
 	}
 	
 	public void removePowerups() {

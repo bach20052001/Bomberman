@@ -1,7 +1,5 @@
 package com.project.bomberman.entities.mob.enemy;
 
-import java.awt.Color;
-
 import com.project.bomberman.Board;
 import com.project.bomberman.Game;
 import com.project.bomberman.entities.Entity;
@@ -13,6 +11,8 @@ import com.project.bomberman.entities.mob.enemy.ai.AI;
 import com.project.bomberman.graphics.Screen;
 import com.project.bomberman.graphics.Sprite;
 import com.project.bomberman.level.Coordinates;
+
+import java.awt.*;
 
 public abstract class Enemy extends Mob {
 
@@ -50,16 +50,15 @@ public abstract class Enemy extends Mob {
 	 */
 	@Override
 	public void update() {
-		animate();
-		
-		if(_alive == false) {
-			afterKill();
-			return;
-		}
-		
-		if(_alive)
-			calculateMove();
-	}
+        animate();
+
+        if (!_alive) {
+            afterKill();
+            return;
+        }
+
+        calculateMove();
+    }
 	
 	@Override
 	public void render(Screen screen) {
@@ -157,14 +156,14 @@ public abstract class Enemy extends Mob {
 	
 	@Override
 	public void kill() {
-		if(_alive == false) return;
-		_alive = false;
-		
-		_board.addPoints(_points);
+        if (!_alive) return;
+        _alive = false;
 
-		Message msg = new Message("+" + _points, getXMessage(), getYMessage(), 2, Color.white, 14);
-		_board.addMessage(msg);
-	}
+        _board.addPoints(_points);
+
+        Message msg = new Message("+" + _points, getXMessage(), getYMessage(), 2, Color.white, 14);
+        _board.addMessage(msg);
+    }
 	
 	
 	@Override

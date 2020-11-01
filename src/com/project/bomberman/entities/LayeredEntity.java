@@ -1,23 +1,23 @@
 package com.project.bomberman.entities;
 
-import java.util.LinkedList;
-
 import com.project.bomberman.entities.tile.destroyable.DestroyableTile;
 import com.project.bomberman.graphics.Screen;
 
+import java.util.LinkedList;
+
 public class LayeredEntity extends Entity {
-	
-	protected LinkedList<Entity> _entities = new LinkedList<Entity>();
-	
-	public LayeredEntity(int x, int y, Entity ... entities) {
-		_x = x;
-		_y = y;
-		
-		for (int i = 0; i < entities.length; i++) {
-			_entities.add(entities[i]); 
-			
-			if(i > 1) { //Add to destroyable tiles the bellow sprite for rendering in explosion
-				if(entities[i] instanceof DestroyableTile)
+
+    protected LinkedList<Entity> _entities = new LinkedList<>();
+
+    public LayeredEntity(int x, int y, Entity... entities) {
+        _x = x;
+        _y = y;
+
+        for (int i = 0; i < entities.length; i++) {
+            _entities.add(entities[i]);
+
+            if (i > 1) { //Add to destroyable tiles the bellow sprite for rendering in explosion
+                if (entities[i] instanceof DestroyableTile)
 					((DestroyableTile)entities[i]).addBelowSprite(entities[i-1].getSprite());
 			}
 		}

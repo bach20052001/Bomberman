@@ -1,11 +1,5 @@
 package com.project.bomberman;
 
-import java.awt.Font;
-import java.awt.Graphics;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-
 import com.project.bomberman.entities.Entity;
 import com.project.bomberman.entities.Message;
 import com.project.bomberman.entities.bomb.Bomb;
@@ -20,28 +14,31 @@ import com.project.bomberman.input.Keyboard;
 import com.project.bomberman.level.FileLevel;
 import com.project.bomberman.level.Level;
 
+import java.awt.*;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
 public class Board implements IRender {
 
-	public int _width, _height;
-	protected Level _level;
-	protected Game _game;
-	protected Keyboard _input;
-	protected Screen _screen;
-	
-	public Entity[] _entities;
-	public List<Mob> _mobs = new ArrayList<Mob>();
-	protected List<Bomb> _bombs = new ArrayList<Bomb>();
-	private List<Message> _messages = new ArrayList<Message>();
-	
-	private int _screenToShow = -1; //1:endgame, 2:changelevel, 3:paused
-	
-	private int _time = Game.TIME;
-	private int _points = Game.POINTS;
-	private int _lives = Game.LIVES;
-	
-	public Board(Game game, Keyboard input, Screen screen) {
-		_game = game;
-		_input = input;
+    private final List<Message> _messages = new ArrayList<>();
+    public int _width, _height;
+    public Entity[] _entities;
+    public List<Mob> _mobs = new ArrayList<>();
+    protected Level _level;
+    protected Game _game;
+    protected Keyboard _input;
+    protected Screen _screen;
+    protected List<Bomb> _bombs = new ArrayList<>();
+    private int _screenToShow = -1; //1:endgame, 2:changelevel, 3:paused
+
+    private int _time = Game.TIME;
+    private int _points = Game.POINTS;
+    private int _lives = Game.LIVES;
+
+    public Board(Game game, Keyboard input, Screen screen) {
+        _game = game;
+        _input = input;
 		_screen = screen;
 		
 		changeLevel(1); //start in level 1
@@ -63,9 +60,9 @@ public class Board implements IRender {
 		detectEndGame();
 		
 		for (int i = 0; i < _mobs.size(); i++) {
-			Mob a = _mobs.get(i);
-			if(((Entity)a).isRemoved()) _mobs.remove(i);
-		}
+            Mob a = _mobs.get(i);
+            if (a.isRemoved()) _mobs.remove(i);
+        }
 	}
 
 
@@ -173,14 +170,14 @@ public class Board implements IRender {
 	}
 	
 	public boolean detectNoEnemies() {
-		int total = 0;
-		for (int i = 0; i < _mobs.size(); i++) {
-			if(_mobs.get(i) instanceof Player == false)
-				++total;
-		}
-		
-		return total == 0;
-	}
+        int total = 0;
+        for (Mob mob : _mobs) {
+            if (!(mob instanceof Player))
+                ++total;
+        }
+
+        return total == 0;
+    }
 	
 	/*
 	|--------------------------------------------------------------------------
@@ -225,19 +222,19 @@ public class Board implements IRender {
 	|--------------------------------------------------------------------------
 	 */
 	public Entity getEntity(double x, double y, Mob m) {
-		
-		Entity res = null;
-		
-		res = getExplosionAt((int)x, (int)y);
-		if( res != null) return res;
-		
-		res = getBombAt(x, y);
-		if( res != null) return res;
-		
-		res = getMobAtExcluding((int)x, (int)y, m);
-		if( res != null) return res;
-		
-		res = getEntityAt((int)x, (int)y);
+
+        Entity res;
+
+        res = getExplosionAt((int) x, (int) y);
+        if (res != null) return res;
+
+        res = getBombAt(x, y);
+        if (res != null) return res;
+
+        res = getMobAtExcluding((int) x, (int) y, m);
+        if (res != null) return res;
+
+        res = getEntityAt((int)x, (int)y);
 		
 		return res;
 	}
@@ -352,35 +349,31 @@ public class Board implements IRender {
 	|--------------------------------------------------------------------------
 	 */
 	protected void renderEntities(Screen screen) {
-		for (int i = 0; i < _entities.length; i++) {
-			_entities[i].render(screen);
-		}
-	}
+        for (Entity entity : _entities) {
+            entity.render(screen);
+        }
+    }
 	
 	protected void renderMobs(Screen screen) {
-		Iterator<Mob> itr = _mobs.iterator();
-		
-		while(itr.hasNext())
-			itr.next().render(screen);
-	}
+
+        for (Mob mob : _mobs) mob.render(screen);
+    }
 	
 	protected void renderBombs(Screen screen) {
-		Iterator<Bomb> itr = _bombs.iterator();
-		
-		while(itr.hasNext())
-			itr.next().render(screen);
-	}
+
+        for (Bomb bomb : _bombs) bomb.render(screen);
+    }
 	
 	public void renderMessages(Graphics g) {
-		Message m;
-		for (int i = 0; i < _messages.size(); i++) {
-			m = _messages.get(i);
-			
-			g.setFont(new Font("Arial", Font.PLAIN, m.getSize()));
-			g.setColor(m.getColor());
-			g.drawString(m.getMessage(), (int)m.getX() - Screen.xOffset  * Game.SCALE, (int)m.getY());
-		}
-	}
+        Message m;
+        for (Message message : _messages) {
+            m = message;
+
+            g.setFont(new Font("Arial", Font.PLAIN, m.getSize()));
+            g.setColor(m.getColor());
+            g.drawString(m.getMessage(), (int) m.getX() - Screen.xOffset * Game.SCALE, (int) m.getY());
+        }
+    }
 	
 	/*
 	|--------------------------------------------------------------------------
@@ -388,11 +381,11 @@ public class Board implements IRender {
 	|--------------------------------------------------------------------------
 	 */
 	protected void updateEntities() {
-		if( _game.isPaused() ) return;
-		for (int i = 0; i < _entities.length; i++) {
-			_entities[i].update();
-		}
-	}
+        if (_game.isPaused()) return;
+        for (Entity entity : _entities) {
+            entity.update();
+        }
+    }
 	
 	protected void updateMobs() {
 		if( _game.isPaused() ) return;
@@ -403,27 +396,25 @@ public class Board implements IRender {
 	}
 	
 	protected void updateBombs() {
-		if( _game.isPaused() ) return;
-		Iterator<Bomb> itr = _bombs.iterator();
-		
-		while(itr.hasNext())
-			itr.next().update();
-	}
+        if (_game.isPaused()) return;
+
+        for (Bomb bomb : _bombs) bomb.update();
+    }
 	
 	protected void updateMessages() {
-		if( _game.isPaused() ) return;
-		Message m;
-		int left = 0;
-		for (int i = 0; i < _messages.size(); i++) {
-			m = _messages.get(i);
-			left = m.getDuration();
-			
-			if(left > 0) 
-				m.setDuration(--left);
-			else
-				_messages.remove(i);
-		}
-	}
+        if (_game.isPaused()) return;
+        Message m;
+        int left;
+        for (int i = 0; i < _messages.size(); i++) {
+            m = _messages.get(i);
+            left = m.getDuration();
+
+            if (left > 0)
+                m.setDuration(--left);
+            else
+                _messages.remove(i);
+        }
+    }
 	
 	/*
 	|--------------------------------------------------------------------------

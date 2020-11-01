@@ -1,27 +1,23 @@
 package com.project.bomberman.gui;
 
-import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.GridLayout;
-
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-
 import com.project.bomberman.Game;
 
+import javax.swing.*;
+import java.awt.*;
+
 public class InfoPanel extends JPanel {
-	
-	private JLabel timeLabel;
-	private JLabel pointsLabel;
-	private JLabel livesLabel;
+
+	private final JLabel timeLabel;
+	private final JLabel pointsLabel;
+	private final JLabel livesLabel;
 
 	public InfoPanel(Game game) {
 		setLayout(new GridLayout());
-		
+
 		timeLabel = new JLabel("Time: " + game.getBoard().getTime());
 		timeLabel.setForeground(Color.white);
 		timeLabel.setHorizontalAlignment(JLabel.CENTER);
-		
+
 		pointsLabel = new JLabel("Points: " + game.getBoard().getPoints());
 		pointsLabel.setForeground(Color.white);
 		pointsLabel.setHorizontalAlignment(JLabel.CENTER);

@@ -18,17 +18,17 @@ public class PortalTile extends Tile {
 	public boolean collide(Entity e) {
 		
 		if(e instanceof Player ) {
-			
-			if(_board.detectNoEnemies() == false)
-				return false;
-			
-			if(e.getXTile() == getX() && e.getYTile() == getY()) {
-				if(_board.detectNoEnemies())
-					_board.nextLevel();
-			}
-			
-			return true;
-		}
+
+            if (!_board.detectNoEnemies())
+                return false;
+
+            if (e.getXTile() == getX() && e.getYTile() == getY()) {
+                if (_board.detectNoEnemies())
+                    _board.nextLevel();
+            }
+
+            return true;
+        }
 		
 		return false;
 	}

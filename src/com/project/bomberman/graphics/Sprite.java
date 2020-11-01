@@ -1,5 +1,7 @@
 package com.project.bomberman.graphics;
 
+import java.util.Arrays;
+
 public class Sprite {
 	
 	public final int SIZE;
@@ -194,9 +196,7 @@ public class Sprite {
 	}
 	
 	private void setColor(int color) {
-		for (int i = 0; i < _pixels.length; i++) {
-			_pixels[i] = color;
-		}
+		Arrays.fill(_pixels, color);
 	}
 
 	private void load() {

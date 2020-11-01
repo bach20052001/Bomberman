@@ -1,35 +1,32 @@
 package com.project.bomberman.gui;
 
-import java.awt.BorderLayout;
-
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-
 import com.project.bomberman.Game;
 import com.project.bomberman.gui.menu.Menu;
 
+import javax.swing.*;
+import java.awt.*;
+
 public class Frame extends JFrame {
-	
+
 	public GamePanel _gamepane;
-	private JPanel _containerpane;
-	private InfoPanel _infopanel;
-	
-	private Game _game;
+	private final InfoPanel _infopanel;
+
+	private final Game _game;
 
 	public Frame() {
 		setJMenuBar(new Menu(this));
-		
-		_containerpane = new JPanel(new BorderLayout());
+
+		JPanel _containerpane = new JPanel(new BorderLayout());
 		_gamepane = new GamePanel(this);
 		_infopanel = new InfoPanel(_gamepane.getGame());
-		
+
 		_containerpane.add(_infopanel, BorderLayout.PAGE_START);
 		_containerpane.add(_gamepane, BorderLayout.PAGE_END);
-		
+
 		_game = _gamepane.getGame();
-		
+
 		add(_containerpane);
-		
+
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		pack();

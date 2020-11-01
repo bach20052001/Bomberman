@@ -1,34 +1,30 @@
 package com.project.bomberman.graphics;
 
-import java.awt.Color;
-import java.awt.Font;
-import java.awt.FontMetrics;
-import java.awt.Graphics;
-
 import com.project.bomberman.Board;
 import com.project.bomberman.Game;
 import com.project.bomberman.entities.Entity;
 import com.project.bomberman.entities.mob.Player;
 
+import java.awt.*;
+import java.util.Arrays;
+
 public class Screen {
 	protected int _width, _height;
 	public int[] _pixels;
-	private int _transparentColor = 0xffff00ff; //pink with alpha channel (ff in the begining)
-	
+	private final int _transparentColor = 0xffff00ff; //pink with alpha channel (ff in the begining)
+
 	public static int xOffset = 0, yOffset = 0;
-	
+
 	public Screen(int width, int height) {
 		_width = width;
 		_height = height;
-		
+
 		_pixels = new int[width * height];
-		
+
 	}
 	
 	public void clear() {
-		for (int i = 0; i < _pixels.length; i++) {
-			_pixels[i] = 0;
-		}
+		Arrays.fill(_pixels, 0);
 	}
 	
 	public void renderEntity(int xp, int yp, Entity entity) { //save entity pixels
