@@ -2,7 +2,7 @@ package com.project.bomberman.entities.bomb;
 
 import com.project.bomberman.Board;
 import com.project.bomberman.Game;
-import com.project.bomberman.entities.AnimatedEntitiy;
+import com.project.bomberman.entities.AnimatedEntity;
 import com.project.bomberman.entities.Entity;
 import com.project.bomberman.entities.mob.Mob;
 import com.project.bomberman.entities.mob.Player;
@@ -10,7 +10,7 @@ import com.project.bomberman.graphics.Screen;
 import com.project.bomberman.graphics.Sprite;
 import com.project.bomberman.level.Coordinates;
 
-public class Bomb extends AnimatedEntitiy {
+public class Bomb extends AnimatedEntity {
 
 	//options
 	protected double _timeToExplode = 120; //2 seconds

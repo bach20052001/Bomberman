@@ -2,10 +2,10 @@ package com.project.bomberman.entities.mob;
 
 import com.project.bomberman.Board;
 import com.project.bomberman.Game;
-import com.project.bomberman.entities.AnimatedEntitiy;
+import com.project.bomberman.entities.AnimatedEntity;
 import com.project.bomberman.graphics.Screen;
 
-public abstract class Mob extends AnimatedEntitiy {
+public abstract class Mob extends AnimatedEntity {
 	
 	protected Board _board;
 	protected int _direction = -1;
