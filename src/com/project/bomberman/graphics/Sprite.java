@@ -10,7 +10,24 @@ public class Sprite {
 	protected int _realWidth;
 	protected int _realHeight;
 	private SpriteSheet _sheet;
-	
+
+	public Sprite(int size, int x, int y, SpriteSheet sheet, int rw, int rh) {
+		SIZE = size;
+		_pixels = new int[SIZE * SIZE];
+		_x = x * SIZE;
+		_y = y * SIZE;
+		_sheet = sheet;
+		_realWidth = rw;
+		_realHeight = rh;
+		load();
+	}
+
+	public Sprite(int size, int color) {
+		SIZE = size;
+		_pixels = new int[SIZE * SIZE];
+		setColor(color);
+	}
+
 	public static Sprite voidSprite = new Sprite(16, 0xffffff); //black
 	
 	/*
@@ -178,22 +195,7 @@ public class Sprite {
 	public static Sprite powerup_bombpass = new Sprite(16, 5, 10, SpriteSheet.tiles, 16, 16);
 	public static Sprite powerup_flamepass = new Sprite(16, 6, 10, SpriteSheet.tiles, 16, 16);
 	
-	public Sprite(int size, int x, int y, SpriteSheet sheet, int rw, int rh) {
-		SIZE = size;
-		_pixels = new int[SIZE * SIZE];
-		_x = x * SIZE;
-		_y = y * SIZE;
-		_sheet = sheet;
-		_realWidth = rw;
-		_realHeight = rh;
-		load();
-	}
-	
-	public Sprite(int size, int color) {
-		SIZE = size;
-		_pixels = new int[SIZE * SIZE];
-		setColor(color);
-	}
+
 	
 	private void setColor(int color) {
 		Arrays.fill(_pixels, color);

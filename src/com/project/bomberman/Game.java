@@ -16,7 +16,7 @@ public class Game extends Canvas {
 	| Options & Configs
 	|--------------------------------------------------------------------------
 	 */
-	public static final double VERSION = 1.9;
+	public static final double VERSION = 1.0;
 
 	public static final int TILES_SIZE = 16,
 			WIDTH = TILES_SIZE * (31 / 2), //minus one to ajust the window,

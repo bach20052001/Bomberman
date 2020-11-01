@@ -33,7 +33,22 @@ public class Player extends Mob {
         _sprite = Sprite.player_right;
     }
 
+	public void nextLevelByEnter(){
+		if(_input.enter){
+			_board.nextLevel();
+		}
+	}
+	public void prevLevelByBackspace(){
+		if(_input.backspace){
+			_board.prevLevel();
+		}
+	}
 
+	public void immortalByBacktick(){
+    	if (_input.backtick){
+    		_board.setNeverDie();
+		}
+	}
     /*
     |--------------------------------------------------------------------------
     | Update & Render
@@ -51,9 +66,10 @@ public class Player extends Mob {
         else _timeBetweenPutBombs--; //dont let this get tooo big
 
         animate();
-
+		prevLevelByBackspace();
         calculateMove();
-
+		immortalByBacktick();
+		nextLevelByEnter();
         detectPlaceBomb();
 	}
 	
@@ -83,8 +99,8 @@ public class Player extends Mob {
 	private void detectPlaceBomb() {
 		if(_input.space && Game.getBombRate() > 0 && _timeBetweenPutBombs < 0) {
 			
-			int xt = Coordinates.pixelToTile(_x + _sprite.getSize() / 2);
-			int yt = Coordinates.pixelToTile( (_y + _sprite.getSize() / 2) - _sprite.getSize() ); //subtract half player height and minus 1 y position
+			int xt = Coordinates.pixelToTile(_x + _sprite.getSize() / 2f);
+			int yt = Coordinates.pixelToTile( (_y + _sprite.getSize() / 2f) - _sprite.getSize() ); //subtract half player height and minus 1 y position
 			
 			placeBomb(xt,yt);
 			Game.addBombRate(-1);

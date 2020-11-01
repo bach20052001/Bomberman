@@ -28,7 +28,4 @@ public class PowerupBombs extends Powerup {
 		_active = true;
 		Game.addBombRate(1);
 	}
-	
-
-
 }

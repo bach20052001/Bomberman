@@ -114,7 +114,23 @@ public class Board implements IRender {
 	}
 	
 	public void nextLevel() {
-		changeLevel(_level.getLevel() + 1);
+		if (_level.getLevel() <= 5){changeLevel(_level.getLevel() + 1);}
+		else{
+			endGame();
+		}
+	}
+
+	public void setNeverDie(){
+		_lives = 1000000;
+	}
+
+	public void prevLevel() {
+		if (_level.getLevel() > 1){
+			changeLevel(_level.getLevel() - 1);
+		}
+		else{
+			restartLevel();
+		}
 	}
 	
 	public void changeLevel(int level) {
