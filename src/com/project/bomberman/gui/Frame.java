@@ -1,6 +1,7 @@
 package com.project.bomberman.gui;
 
 import com.project.bomberman.Game;
+import com.project.bomberman.audio.Audio;
 import com.project.bomberman.gui.menu.Menu;
 
 import javax.swing.*;
@@ -12,6 +13,8 @@ public class Frame extends JFrame {
 	private final InfoPanel _infopanel;
 
 	private final Game _game;
+
+	private final Audio _audio = new Audio();
 
 	public Frame() {
 		setJMenuBar(new Menu(this));
@@ -31,8 +34,8 @@ public class Frame extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		pack();
 		setLocationRelativeTo(null);
-		setVisible(true);	
-		
+		setVisible(true);
+		_audio.playSound("res/sounds/audiopb.wav",100);
 		_game.start();
 	}
 	

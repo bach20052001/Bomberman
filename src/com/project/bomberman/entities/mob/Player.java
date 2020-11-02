@@ -2,6 +2,7 @@ package com.project.bomberman.entities.mob;
 
 import com.project.bomberman.Board;
 import com.project.bomberman.Game;
+import com.project.bomberman.audio.Audio;
 import com.project.bomberman.entities.Entity;
 import com.project.bomberman.entities.Message;
 import com.project.bomberman.entities.bomb.Bomb;
@@ -24,6 +25,8 @@ public class Player extends Mob {
     private final List<Bomb> _bombs;
     protected Keyboard _input;
     protected int _timeBetweenPutBombs = 0;
+    protected Audio _audio = new Audio();
+//    private boolean _sheild;
 
 
     public Player(int x, int y, Board board) {
@@ -34,12 +37,12 @@ public class Player extends Mob {
     }
 
 	public void nextLevelByEnter(){
-		if(_input.enter){
+		if(_input.add){
 			_board.nextLevel();
 		}
 	}
 	public void prevLevelByBackspace(){
-		if(_input.backspace){
+		if(_input.subtract){
 			_board.prevLevel();
 		}
 	}
@@ -110,6 +113,8 @@ public class Player extends Mob {
 	}
 	
 	protected void placeBomb(int x, int y) {
+		_audio.playSound("res/sounds/place_bomb.wav",0);
+		_audio.playSound("res/sounds/place_bomb.wav",0);
 		Bomb b = new Bomb(x, y, _board);
 		_board.addBomb(b);
 	}
@@ -140,7 +145,7 @@ public class Player extends Mob {
 		_alive = false;
 		
 		_board.addLives(-1);
-
+		_audio.playSound("res/sounds/dead.wav",0);
 		Message msg = new Message("-1 LIVE", getXMessage(), getYMessage(), 2, Color.white, 14);
 		_board.addMessage(msg);
 	}
@@ -239,7 +244,7 @@ public class Player extends Mob {
 	 */
 	public void addPowerup(Powerup p) {
 		if(p.isRemoved()) return;
-		
+		_audio.playSound("res/sounds/power_up.wav",0);
 		_powerups.add(p);
 		
 		p.setValues();

@@ -1,5 +1,6 @@
 package com.project.bomberman;
 
+import com.project.bomberman.audio.Audio;
 import com.project.bomberman.graphics.Screen;
 import com.project.bomberman.gui.Frame;
 import com.project.bomberman.input.Keyboard;
@@ -11,7 +12,7 @@ import java.awt.image.DataBufferInt;
 
 public class Game extends Canvas {
 
-	/*
+	/**
 	|--------------------------------------------------------------------------
 	| Options & Configs
 	|--------------------------------------------------------------------------
@@ -21,6 +22,7 @@ public class Game extends Canvas {
 	public static final int TILES_SIZE = 16,
 			WIDTH = TILES_SIZE * (31 / 2), //minus one to ajust the window,
 			HEIGHT = 13 * TILES_SIZE;
+
 
 	public static int SCALE = 3;
 
@@ -116,7 +118,8 @@ public class Game extends Canvas {
 		_input.update();
 		_board.update();
 	}
-	
+
+
 	public void start() {
 		_running = true;
 		

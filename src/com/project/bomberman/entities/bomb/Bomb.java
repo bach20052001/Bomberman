@@ -2,6 +2,7 @@ package com.project.bomberman.entities.bomb;
 
 import com.project.bomberman.Board;
 import com.project.bomberman.Game;
+import com.project.bomberman.audio.Audio;
 import com.project.bomberman.entities.AnimatedEntity;
 import com.project.bomberman.entities.Entity;
 import com.project.bomberman.entities.mob.Mob;
@@ -24,7 +25,8 @@ public class Bomb extends AnimatedEntity {
 	protected DirectionalExplosion[] _explosions = null;
 	// Đã nổ hay chưa
 	protected boolean _exploded = false;
-	
+	//
+	protected Audio _audio = new Audio();
 	public Bomb(int x, int y,Board board) {
 		_x = x;
 		_y = y;
@@ -91,7 +93,7 @@ public class Bomb extends AnimatedEntity {
 		if(a != null)  {
 			a.kill();
 		}
-		
+		_audio.playSound("res/sounds/bomb.wav",0);
 		_explosions = new DirectionalExplosion[4];
 		
 		for (int i = 0; i < _explosions.length; i++) {

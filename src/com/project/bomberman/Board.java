@@ -1,5 +1,6 @@
 package com.project.bomberman;
 
+import com.project.bomberman.audio.Audio;
 import com.project.bomberman.entities.Entity;
 import com.project.bomberman.entities.Message;
 import com.project.bomberman.entities.bomb.Bomb;
@@ -60,17 +61,12 @@ public class Board implements IRender {
 	 * Mạng
 	 */
     private int _lives = Game.LIVES;
-
-
-    /**
-	 *
-	*/
 	/**
-	 * @param game
-	 * @param input
-	 * @param screen
+	 * Audio
 	 */
-    public Board(Game game, Keyboard input, Screen screen) {
+
+
+	public Board(Game game, Keyboard input, Screen screen) {
         _game = game;
         _input = input;
 		_screen = screen;
@@ -152,11 +148,11 @@ public class Board implements IRender {
 		_game.bombRate = 1;
 		
 	}
-	/**
-	 * Về level đầu
-	 */
+
+
 	public void restartLevel() {
 		changeLevel(_level.getLevel());
+		resetProperties();
 	}
 	/**
 	 * Hack nextLevel
@@ -170,6 +166,7 @@ public class Board implements IRender {
 	/**
 	 * Hack mạng
 	 */
+
 	public void setNeverDie(){
 		_lives = 1000000;
 	}
@@ -184,7 +181,12 @@ public class Board implements IRender {
 			restartLevel();
 		}
 	}
-	
+
+	/**
+	 * Audio
+	 */
+
+
 	public void changeLevel(int level) {
 		_time = Game.TIME;
 		_screenToShow = 2;
