@@ -81,7 +81,5 @@ public class CodeDialog implements WindowListener, ActionListener {
 				    "Error",
 				    JOptionPane.ERROR_MESSAGE);
 		}
-		
 	}
-
 }

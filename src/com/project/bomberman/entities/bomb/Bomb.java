@@ -119,8 +119,6 @@ public class Bomb extends AnimatedEntity {
 
 	/**
 	 * Xử lý va chạm bằng collider
-	 * @param e
-	 * @return
 	 */
 	@Override
 	public boolean collide(Entity e) {

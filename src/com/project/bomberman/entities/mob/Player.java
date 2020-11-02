@@ -26,8 +26,6 @@ public class Player extends Mob {
     protected Keyboard _input;
     protected int _timeBetweenPutBombs = 0;
     protected Audio _audio = new Audio();
-//    private boolean _sheild;
-
 
     public Player(int x, int y, Board board) {
         super(x, y, board);
@@ -35,6 +33,7 @@ public class Player extends Mob {
         _input = _board.getInput();
         _sprite = Sprite.player_right;
     }
+
 
 	public void nextLevelByEnter(){
 		if(_input.add){
@@ -111,9 +110,9 @@ public class Player extends Mob {
 			_timeBetweenPutBombs = 30;
 		}
 	}
-	
+
+
 	protected void placeBomb(int x, int y) {
-		_audio.playSound("res/sounds/place_bomb.wav",0);
 		_audio.playSound("res/sounds/place_bomb.wav",0);
 		Bomb b = new Bomb(x, y, _board);
 		_board.addBomb(b);
@@ -141,9 +140,9 @@ public class Player extends Mob {
 	@Override
 	public void kill() {
 		if(!_alive) return;
-		
+
 		_alive = false;
-		
+
 		_board.addLives(-1);
 		_audio.playSound("res/sounds/dead.wav",0);
 		Message msg = new Message("-1 LIVE", getXMessage(), getYMessage(), 2, Color.white, 14);

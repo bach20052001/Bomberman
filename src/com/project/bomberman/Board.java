@@ -64,13 +64,15 @@ public class Board implements IRender {
 	/**
 	 * Audio
 	 */
-
+	protected Audio _audio = new Audio();
+	protected boolean checkAceCall = false;
+	protected boolean checkFbCall = false;
 
 	public Board(Game game, Keyboard input, Screen screen) {
         _game = game;
         _input = input;
 		_screen = screen;
-		
+
 		changeLevel(1); //start in level 1
 	}
 
@@ -94,7 +96,10 @@ public class Board implements IRender {
 		updateBombs();
 		updateMessages();
 		detectEndGame();
-		
+
+		if (!checkAceCall) AceNotify();
+		if (!checkFbCall) FirstBloodNotify();
+
 		for (int i = 0; i < _mobs.size(); i++) {
             Mob a = _mobs.get(i);
             if (a.isRemoved()) _mobs.remove(i);
@@ -149,10 +154,20 @@ public class Board implements IRender {
 		
 	}
 
+	@SuppressWarnings("static-access")
+	private void resetPoint() {
+		_points = Game.POINTS;
+		Player._powerups.clear();
+
+		_game.playerSpeed = 1.0;
+		_game.bombRadius = 1;
+		_game.bombRate = 1;
+	}
+
 
 	public void restartLevel() {
 		changeLevel(_level.getLevel());
-		resetProperties();
+		resetPoint();
 	}
 	/**
 	 * Hack nextLevel
@@ -255,16 +270,47 @@ public class Board implements IRender {
             if (!(mob instanceof Player))
                 ++total;
         }
-
         return total == 0;
     }
-	
+
+    public void AceNotify(){
+		if (!detectNoEnemies()) {
+		}
+		else {
+			_audio.playSound("res/sounds/mk.wav",0);
+			checkAceCall = true;
+		}
+//		return checkAceCall;
+	}
+
+	public void FirstBloodNotify(){
+		if (!detectFirstBlood()) {
+		}
+		else {
+			_audio.playSound("res/sounds/firstblood.wav",0);
+			checkFbCall = true;
+		}
+//		return checkFbCall;
+	}
+
+    public boolean  detectFirstBlood(){
+		int total = 0;
+		for (Mob mob : _mobs) {
+			if (!(mob instanceof Player))
+				if (mob.isAlive())
+				++total;
+		}
+		return total == _mobs.size() - 2;
+	}
+
+
 	/**
 	|--------------------------------------------------------------------------
 	| Pause & Resume
 	|--------------------------------------------------------------------------
 	 */
 	public void gamePause() {
+
 		_game.resetScreenDelay();
 		if(_screenToShow <= 0)
 			_screenToShow = 3;

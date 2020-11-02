@@ -228,9 +228,16 @@ public class Sprite {
 	public static Sprite powerup_detonator = new Sprite(16, 4, 10, SpriteSheet.tiles, 16, 16);
 	public static Sprite powerup_bombpass = new Sprite(16, 5, 10, SpriteSheet.tiles, 16, 16);
 	public static Sprite powerup_flamepass = new Sprite(16, 6, 10, SpriteSheet.tiles, 16, 16);
-	
 
-	
+
+	/**
+	 |--------------------------------------------------------------------------
+	 | Shield
+	 |--------------------------------------------------------------------------
+	 */
+	public static Sprite shield = new Sprite(16, 15, 15, SpriteSheet.tiles, 16, 16);
+
+
 	private void setColor(int color) {
 		Arrays.fill(_pixels, color);
 	}
@@ -243,7 +250,7 @@ public class Sprite {
 		}
 	}
 	
-	/*
+	/**
 	|--------------------------------------------------------------------------
 	| Moving Sprites
 	|--------------------------------------------------------------------------

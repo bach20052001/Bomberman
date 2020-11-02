@@ -35,7 +35,7 @@ public class Frame extends JFrame {
 		pack();
 		setLocationRelativeTo(null);
 		setVisible(true);
-		_audio.playSound("res/sounds/audiopb.wav",100);
+//		_audio.playSound("res/sounds/audiopb.wav",100);
 		_game.start();
 	}
 	
