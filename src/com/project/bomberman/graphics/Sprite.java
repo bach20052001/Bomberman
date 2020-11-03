@@ -15,12 +15,6 @@ public class Sprite {
 	 * Kích thước texture là 256*256
 	 * Chia thành các Sprite nhỏ với size là 16*16 => sẽ có 256 sprite nhỏ
 	 * Các sprite có thể được nối với nhau để tạo thành animation
-	 * @param size
-	 * @param x
-	 * @param y
-	 * @param sheet
-	 * @param rw
-	 * @param rh
 	 */
 	public Sprite(int size, int x, int y, SpriteSheet sheet, int rw, int rh) {
 		SIZE = size;

@@ -147,18 +147,20 @@ public class Board implements IRender {
 		_points = Game.POINTS;
 		_lives = Game.LIVES;
 		Player._powerups.clear();
-		
+		checkFbCall = false;
+		checkAceCall = false;
 		_game.playerSpeed = 1.0;
 		_game.bombRadius = 1;
 		_game.bombRate = 1;
-		
+
 	}
 
 	@SuppressWarnings("static-access")
 	private void resetPoint() {
 		_points = Game.POINTS;
 		Player._powerups.clear();
-
+		checkFbCall = false;
+		checkAceCall = false;
 		_game.playerSpeed = 1.0;
 		_game.bombRadius = 1;
 		_game.bombRate = 1;
@@ -210,23 +212,26 @@ public class Board implements IRender {
 		_mobs.clear();
 		_bombs.clear();
 		_messages.clear();
-		
+		checkFbCall = false;
+		checkAceCall = false;
+
 		try {
 			_level = new FileLevel("levels/Level" + level + ".txt", this);
 			_entities = new Entity[_level.getHeight() * _level.getWidth()];
-			
+
 			_level.createEntities();
 		} catch (LoadLevelException e) {
 			endGame(); //failed to load.. so.. no more levels?
 		}
 	}
-	
+
+	// Thay đổi level bằng code cheat
 	public void changeLevelByCode(String str) {
 		int i = _level.validCode(str);
-		
-		if(i != -1) changeLevel(i + 1);
+
+		if (i != -1) changeLevel(i + 1);
 	}
-	
+
 	public boolean isPowerupUsed(int x, int y, int level) {
 		Powerup p;
 		for (int i = 0; i < Player._powerups.size(); i++) {
