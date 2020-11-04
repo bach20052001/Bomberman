@@ -26,7 +26,7 @@ public class Player extends Mob {
     protected Keyboard _input;
     protected int _timeBetweenPutBombs = 0;
     protected Audio _audio = new Audio();
-    protected Shield _shield = new Shield(0,0);
+    protected Shield _shield = new Shield(0,0,0,0,_board);
 
     public Player(int x, int y, Board board) {
         super(x, y, board);
@@ -60,11 +60,11 @@ public class Player extends Mob {
 		}
 	}
 
-	public void useShield(){
-    	if (_input.R){
-    		_board.SHIELD();
-		}
-	}
+//	public void useShield(){
+//    	if (_input.R){
+//    		_board.SHIELD();
+//		}
+//	}
     /*
     |--------------------------------------------------------------------------
     | Update & Render
@@ -85,7 +85,7 @@ public class Player extends Mob {
 		prevLevelByBackspace();
         calculateMove();
 		immortalByBacktick();
-		useShield();
+		DetectSetShield();
 		nextLevelByEnter();
         detectPlaceBomb();
         _shield.update();
@@ -127,6 +127,21 @@ public class Player extends Mob {
 		}
 	}
 
+	protected void DetectSetShield(){
+		if (_input.R){
+			int xt = Coordinates.pixelToTile(_x + _sprite.getSize() / 2f);
+			int yt = Coordinates.pixelToTile( (_y + _sprite.getSize() / 2f) - _sprite.getSize() ); //subtract half player height and minus 1 y position
+			placeShield(xt,yt);
+		}
+	}
+
+	protected void placeShield(int x, int y){
+		if (_shield.getCdSkill() <= 0){
+			_shield = new Shield(x,y,300,1800,_board);
+			_shield.setActive(true);
+//			_board.addShield(_shield);
+		}
+	}
 
 	protected void placeBomb(int x, int y) {
 		_audio.playSound("res/sounds/place_bomb.wav",0);

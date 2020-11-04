@@ -29,6 +29,7 @@ public class Board implements IRender {
 	 * Thực thể không di chuyển
 	 */
     public Entity[] _entities;
+//    public List<Shield> _shield = new ArrayList<>();
 	/**
 	 * Thực thể di chuyển
 	 */
@@ -199,19 +200,7 @@ public class Board implements IRender {
 			restartLevel();
 		}
 	}
-	/**
-	 * Shield
-	 */
-	public void SHIELD(){
-		for (Mob mob : _mobs) {
-			if (mob instanceof Player)
-			{
-				mob = (Player) mob;
-				((Player) mob).set_shield(new Shield(0,0));
-				((Player) mob).get_shield().setActive(true);
-			}
-		}
-	}
+
 
 	/**
 	 * Audio
@@ -477,7 +466,11 @@ public class Board implements IRender {
 	public void addEntitie(int pos, Entity e) {
 		_entities[pos] = e;
 	}
-	
+
+//	public void addShield(Shield s){
+//		_shield.add(s);
+//	}
+
 	public void addMob(Mob e) {
 		_mobs.add(e);
 	}
@@ -535,13 +528,20 @@ public class Board implements IRender {
     }
 	
 	protected void updateMobs() {
-		if( _game.isPaused() ) return;
+		if(_game.isPaused()) return;
 		Iterator<Mob> itr = _mobs.iterator();
 		
 		while(itr.hasNext() && !_game.isPaused())
 			itr.next().update();
 	}
-	
+
+//	protected void updateShield() {
+//		if (_game.isPaused()) return;
+//		Iterator<Shield> itr = _shield.iterator();
+//
+//		while(itr.hasNext() && !_game.isPaused())
+//			itr.next().update();
+//	}
 	protected void updateBombs() {
         if (_game.isPaused()) return;
 

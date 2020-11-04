@@ -1,5 +1,6 @@
 package com.project.bomberman.entities.mob;
 
+import com.project.bomberman.Board;
 import com.project.bomberman.entities.Entity;
 import com.project.bomberman.graphics.Screen;
 import com.project.bomberman.graphics.Sprite;
@@ -7,15 +8,17 @@ import com.project.bomberman.level.Coordinates;
 
 public class Shield extends Entity{
     private boolean isActive = false;
-    private double timeRemaining;
-    private double countdownSkill = 1800;
+    private double timeRemaining = 0;
+    private double cdSkill = 0;
+    protected Board _board;
 
-    public Shield(double x, double y) {
+    public Shield(double x, double y,double timeRemaining,double cdSkill,Board board) {
         this._x = x;
         this._y = y;
         _sprite = Sprite.shield;
-        timeRemaining = 300;//5s
-        countdownSkill = 1800;//30s để hồi skill
+        _board = board;
+        this.timeRemaining = timeRemaining;//5s
+        this.cdSkill = cdSkill;//30s để hồi skill
     }
 
     public void setX(double x){
@@ -34,25 +37,34 @@ public class Shield extends Entity{
         this.isActive = isActive;
     }
 
+    public double getCdSkill() {
+        return cdSkill;
+    }
+
     public void setTimeRemaining(double timeRemaining) {
         this.timeRemaining = timeRemaining;
     }
 
     @Override
     public void update() {
+        if (cdSkill > 0) {
+            cdSkill--;
+        }
+        System.out.println(cdSkill);
+
         if (timeRemaining > 0){
             timeRemaining--;
-            System.out.println(timeRemaining);
         }
         else if (isActive)
             {
             this.setActive(false);
+            remove();
         }
     }
 
     @Override
     public void render(Screen screen) {
-        screen.renderEntity(Coordinates.tileToPixel(_x), Coordinates.tileToPixel(_y), this);
+        screen.renderEntity((int)_x, (int)_y, this);
     }
 
     @Override
