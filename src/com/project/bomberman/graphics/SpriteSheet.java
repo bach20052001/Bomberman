@@ -10,7 +10,7 @@ public class SpriteSheet {
 
 	//Load texture từ textures/classic.png
 
-	public static SpriteSheet tiles = new SpriteSheet("/textures/classic2.bmp", 256);
+	public static SpriteSheet tiles = new SpriteSheet("/textures/classic4.bmp", 256);
     public final int SIZE;
     private final String _path;
     public int[] _pixels;

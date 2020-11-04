@@ -43,6 +43,7 @@ public class Sprite {
 	/**
 	 * Lấy các hình ảnh thực thể tĩnh từ classic.png
 	 */
+
 	public static Sprite grass = new Sprite(16, 6, 0, SpriteSheet.tiles, 16, 16);
 
 	public static Sprite brick = new Sprite(16, 7, 0, SpriteSheet.tiles, 16, 16);

@@ -26,6 +26,7 @@ public class Player extends Mob {
     protected Keyboard _input;
     protected int _timeBetweenPutBombs = 0;
     protected Audio _audio = new Audio();
+    protected Shield _shield = new Shield(0,0);
 
     public Player(int x, int y, Board board) {
         super(x, y, board);
@@ -34,6 +35,13 @@ public class Player extends Mob {
         _sprite = Sprite.player_right;
     }
 
+    public void set_shield(Shield _shield){
+    	this._shield = _shield;
+	}
+
+	public Shield get_shield() {
+		return _shield;
+	}
 
 	public void nextLevelByEnter(){
 		if(_input.add){
@@ -49,6 +57,12 @@ public class Player extends Mob {
 	public void immortalByBacktick(){
     	if (_input.backtick){
     		_board.setNeverDie();
+		}
+	}
+
+	public void useShield(){
+    	if (_input.R){
+    		_board.SHIELD();
 		}
 	}
     /*
@@ -71,8 +85,10 @@ public class Player extends Mob {
 		prevLevelByBackspace();
         calculateMove();
 		immortalByBacktick();
+		useShield();
 		nextLevelByEnter();
         detectPlaceBomb();
+        _shield.update();
 	}
 	
 	@Override
@@ -139,14 +155,16 @@ public class Player extends Mob {
 	 */
 	@Override
 	public void kill() {
-		if(!_alive) return;
+		if (!_shield.getActive()){
+			if(!_alive) return;
 
-		_alive = false;
+			_alive = false;
 
-		_board.addLives(-1);
-		_audio.playSound("res/sounds/dead.wav",0);
-		Message msg = new Message("-1 LIVE", getXMessage(), getYMessage(), 2, Color.white, 14);
-		_board.addMessage(msg);
+			_board.addLives(-1);
+			_audio.playSound("res/sounds/dead.wav",0);
+			Message msg = new Message("-1 LIVE", getXMessage(), getYMessage(), 2, Color.white, 14);
+			_board.addMessage(msg);
+		}
 	}
 	
 	@Override
@@ -227,11 +245,19 @@ public class Player extends Mob {
 			kill();
 			return false;
 		}
-		
+
+		// Nếu có khiên thì húc được kẻ địch chết
 		if(e instanceof Enemy) {
-			kill();
-			return true;
+			if (_shield.getActive()){
+				((Enemy) e).kill();
+			}
+			else {
+				kill();
+				return true;
+			}
 		}
+
+
 		
 		return true;
 	}

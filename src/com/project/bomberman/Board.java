@@ -7,6 +7,7 @@ import com.project.bomberman.entities.bomb.Bomb;
 import com.project.bomberman.entities.bomb.Explosion;
 import com.project.bomberman.entities.mob.Mob;
 import com.project.bomberman.entities.mob.Player;
+import com.project.bomberman.entities.mob.Shield;
 import com.project.bomberman.entities.tile.powerup.Powerup;
 import com.project.bomberman.exceptions.LoadLevelException;
 import com.project.bomberman.graphics.IRender;
@@ -196,6 +197,19 @@ public class Board implements IRender {
 		}
 		else{
 			restartLevel();
+		}
+	}
+	/**
+	 * Shield
+	 */
+	public void SHIELD(){
+		for (Mob mob : _mobs) {
+			if (mob instanceof Player)
+			{
+				mob = (Player) mob;
+				((Player) mob).set_shield(new Shield(0,0));
+				((Player) mob).get_shield().setActive(true);
+			}
 		}
 	}
 
@@ -533,7 +547,7 @@ public class Board implements IRender {
 
         for (Bomb bomb : _bombs) bomb.update();
     }
-	
+
 	protected void updateMessages() {
         if (_game.isPaused()) return;
         Message m;

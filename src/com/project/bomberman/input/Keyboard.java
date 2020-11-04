@@ -8,7 +8,7 @@ public class Keyboard implements KeyListener {
      * Xử lý để nhận input từ bàn phím
      */
     private final boolean[] keys = new boolean[200]; //120 is enough to this game
-    public boolean up, down, left, right, space ,add ,subtract ,backtick;
+    public boolean up, down, left, right, space ,add ,subtract ,backtick , R;
 
     public void update() {
         up = keys[KeyEvent.VK_UP] || keys[KeyEvent.VK_W];
@@ -19,6 +19,7 @@ public class Keyboard implements KeyListener {
         add = keys[KeyEvent.VK_ADD];
         subtract = keys[KeyEvent.VK_SUBTRACT];
         backtick = keys[KeyEvent.VK_BACK_QUOTE];
+        R = keys[KeyEvent.VK_R];
     }
 
     @Override
