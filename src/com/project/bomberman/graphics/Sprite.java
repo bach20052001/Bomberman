@@ -230,7 +230,7 @@ public class Sprite {
 	 | Shield
 	 |--------------------------------------------------------------------------
 	 */
-	public static Sprite shield = new Sprite(16, 15, 15, SpriteSheet.tiles, 16, 16);
+	public static Sprite shield = new Sprite(16, 6, 11, SpriteSheet.tiles, 16, 16);
 
 
 	private void setColor(int color) {

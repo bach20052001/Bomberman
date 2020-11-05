@@ -61,12 +61,7 @@ public class Player extends Mob {
 		}
 	}
 
-//	public void useShield(){
-//    	if (_input.R){
-//    		_board.SHIELD();
-//		}
-//	}
-    /*
+    /**
     |--------------------------------------------------------------------------
     | Update & Render
     |--------------------------------------------------------------------------
@@ -141,7 +136,6 @@ public class Player extends Mob {
 		if (_shield.getCdSkill() <= 0){
 			_shield = new Shield(x,y,300,1800,_board,this);
 			_shield.setActive(true);
-			_board.addEntitie(0,_shield);
 		}
 	}
 
@@ -255,8 +249,6 @@ public class Player extends Mob {
 
 	/**
 	 * Xử lý va chạm cho người chơi
-	 * @param e
-	 * @return
 	 */
 	@Override
 	public boolean collide(Entity e) {

@@ -69,27 +69,9 @@ public class Shield extends Mob{
 
     }
 
-//    @Override
-//    public void render(Screen screen) {
-//        this._x = player.getX();
-//        this._y = player.getY();
-//        screen.renderEntity((int)_x, (int)_y, this);
-//    }
 
-    // Cuong
     @Override
     public void render(Screen screen) {
-//        calculateXOffset();
-
-//        if(_alive)
-//            chooseSprite();
-//        else
-//            _sprite = Sprite.player_dead1;
-
-//            this._x = player.getX();
-//            this._y = player.getY();
-//            //System.out.println(_x + "+" + _y);
-
         if (timeRemaining > 0)
         screen.renderEntity((int)_x, (int)_y - _sprite.SIZE, this);
     }
