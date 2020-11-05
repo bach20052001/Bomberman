@@ -26,7 +26,8 @@ public class Player extends Mob {
     protected Keyboard _input;
     protected int _timeBetweenPutBombs = 0;
     protected Audio _audio = new Audio();
-    protected Shield _shield = new Shield(0,0,0,0,_board);
+    protected Shield _shield = new Shield(0,0,0,0,_board,this);
+
 
     public Player(int x, int y, Board board) {
         super(x, y, board);
@@ -101,6 +102,7 @@ public class Player extends Mob {
 			_sprite = Sprite.player_dead1;
 		
 		screen.renderEntity((int)_x, (int)_y - _sprite.SIZE, this);
+		_shield.render(screen);
 	}
 	
 	public void calculateXOffset() {
@@ -123,7 +125,7 @@ public class Player extends Mob {
 			placeBomb(xt,yt);
 			Game.addBombRate(-1);
 			
-			_timeBetweenPutBombs = 30;
+			_timeBetweenPutBombs = 25;
 		}
 	}
 
@@ -137,9 +139,9 @@ public class Player extends Mob {
 
 	protected void placeShield(int x, int y){
 		if (_shield.getCdSkill() <= 0){
-			_shield = new Shield(x,y,300,1800,_board);
+			_shield = new Shield(x,y,300,1800,_board,this);
 			_shield.setActive(true);
-//			_board.addShield(_shield);
+			_board.addEntitie(0,_shield);
 		}
 	}
 
@@ -154,6 +156,8 @@ public class Player extends Mob {
 		
 		Bomb b;
 		while(bs.hasNext()) {
+
+
 			b = bs.next();
 			if(b.isRemoved())  {
 				bs.remove();
