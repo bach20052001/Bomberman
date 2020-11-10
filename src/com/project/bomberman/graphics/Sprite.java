@@ -60,15 +60,15 @@ public class Sprite {
 	/**
 	 * Lấy các hình ảnh người chơi từ classic.png
 	 */
-	public static Sprite player_up = new Sprite(16, 0, 0, SpriteSheet.tiles, 12, 16);
+	public static Sprite player_up = new Sprite(16, 0, 15, SpriteSheet.tiles, 12, 16);
 	public static Sprite player_down = new Sprite(16, 2, 0, SpriteSheet.tiles, 12, 15);
 	public static Sprite player_left = new Sprite(16, 3, 0, SpriteSheet.tiles, 10, 15);
 	public static Sprite player_right = new Sprite(16, 1, 0, SpriteSheet.tiles, 10, 16);
 	/**
 	 * Animate đi lên của người chơi
 	 */
-	public static Sprite player_up_1 = new Sprite(16, 0, 1, SpriteSheet.tiles, 12, 16);
-	public static Sprite player_up_2 = new Sprite(16, 0, 2, SpriteSheet.tiles, 12, 15);
+	public static Sprite player_up_1 = new Sprite(16, 1, 15, SpriteSheet.tiles, 12, 16);
+	public static Sprite player_up_2 = new Sprite(16, 2, 15, SpriteSheet.tiles, 12, 15);
 	/**
 	 * Animate đi xuống của người chơi
 	 */

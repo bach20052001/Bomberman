@@ -27,6 +27,7 @@ public class Bomb extends AnimatedEntity {
 	protected boolean _exploded = false;
 	//
 	protected Audio _audio = new Audio();
+
 	public Bomb(int x, int y,Board board) {
 		_x = x;
 		_y = y;
@@ -36,7 +37,8 @@ public class Bomb extends AnimatedEntity {
 
  @Override
 	public void update() {
-		if(_timeToExplode > 0) 
+
+		if(_timeToExplode > 0)
 			_timeToExplode--;
 		else {
 			if(!_exploded) 

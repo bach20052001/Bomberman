@@ -27,9 +27,10 @@ public class Player extends Mob {
     protected int _timeBetweenPutBombs = 0;
     protected Audio _audio = new Audio();
     protected Shield _shield = new Shield(0,0,0,0,_board,this);
+    protected boolean isPress = false;
 
 
-    public Player(int x, int y, Board board) {
+	public Player(int x, int y, Board board) {
         super(x, y, board);
         _bombs = _board.getBombs();
         _input = _board.getInput();
@@ -126,9 +127,13 @@ public class Player extends Mob {
 
 	protected void DetectSetShield(){
 		if (_input.R){
+			isPress = true;
 			int xt = Coordinates.pixelToTile(_x + _sprite.getSize() / 2f);
 			int yt = Coordinates.pixelToTile( (_y + _sprite.getSize() / 2f) - _sprite.getSize() ); //subtract half player height and minus 1 y position
 			placeShield(xt,yt);
+		}
+		if (isPress){
+			_board.set_cdShield((int)_shield.getCdSkill());
 		}
 	}
 
@@ -252,6 +257,7 @@ public class Player extends Mob {
 	 */
 	@Override
 	public boolean collide(Entity e) {
+		//Dính boom
 		if(e instanceof DirectionalExplosion) {
 			kill();
 			return false;

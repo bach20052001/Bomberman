@@ -7,7 +7,6 @@ import com.project.bomberman.entities.bomb.Bomb;
 import com.project.bomberman.entities.bomb.Explosion;
 import com.project.bomberman.entities.mob.Mob;
 import com.project.bomberman.entities.mob.Player;
-import com.project.bomberman.entities.mob.Shield;
 import com.project.bomberman.entities.tile.powerup.Powerup;
 import com.project.bomberman.exceptions.LoadLevelException;
 import com.project.bomberman.graphics.IRender;
@@ -21,6 +20,10 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+	/**
+	 * Xử lý các event, function trong Game
+	 */
+
 public class Board implements IRender {
 
     private final List<Message> _messages = new ArrayList<>();
@@ -29,7 +32,7 @@ public class Board implements IRender {
 	 * Thực thể không di chuyển
 	 */
     public Entity[] _entities;
-//    public List<Shield> _shield = new ArrayList<>();
+
 	/**
 	 * Thực thể di chuyển
 	 */
@@ -66,10 +69,13 @@ public class Board implements IRender {
 	/**
 	 * Audio
 	 */
+	private int _cdShield;
+
 	protected Audio _audio = new Audio();
 	protected boolean checkAceCall = false;
 	protected boolean checkFbCall = false;
 
+	// Constructor
 	public Board(Game game, Keyboard input, Screen screen) {
         _game = game;
         _input = input;
@@ -127,7 +133,6 @@ public class Board implements IRender {
 				_entities[x + y * _level.getWidth()].render(screen);
 			}
 		}
-		
 		renderBombs(screen);
 		renderMobs(screen);
 	}
@@ -154,6 +159,7 @@ public class Board implements IRender {
 		_game.playerSpeed = 1.0;
 		_game.bombRadius = 1;
 		_game.bombRate = 1;
+		_cdShield = 0;
 
 	}
 
@@ -166,6 +172,7 @@ public class Board implements IRender {
 		_game.playerSpeed = 1.0;
 		_game.bombRadius = 1;
 		_game.bombRate = 1;
+		_cdShield = 0;
 	}
 
 
@@ -281,6 +288,7 @@ public class Board implements IRender {
         return total == 0;
     }
 
+    // Phát âm thanh lúc hạ gục hết quái
     public void AceNotify(){
 		if (!detectNoEnemies()) {
 		}
@@ -291,6 +299,7 @@ public class Board implements IRender {
 //		return checkAceCall;
 	}
 
+	//Phát âm thanh lúc giết con quái đầu tiên
 	public void FirstBloodNotify(){
 		if (!detectFirstBlood()) {
 		}
@@ -301,6 +310,7 @@ public class Board implements IRender {
 //		return checkFbCall;
 	}
 
+	// Kiểm tra giết con đầu tiền
     public boolean  detectFirstBlood(){
 		int total = 0;
 		for (Mob mob : _mobs) {
@@ -407,7 +417,6 @@ public class Board implements IRender {
 	
 	public Player getPlayer() {
 		Iterator<Mob> itr = _mobs.iterator();
-		
 		Mob cur;
 		while(itr.hasNext()) {
 			cur = itr.next();
@@ -415,7 +424,6 @@ public class Board implements IRender {
 			if(cur instanceof Player)
 				return (Player) cur;
 		}
-		
 		return null;
 	}
 	
@@ -463,18 +471,15 @@ public class Board implements IRender {
 	| Adds and Removes
 	|--------------------------------------------------------------------------
 	 */
+	// List các vật không di chuyển
 	public void addEntitie(int pos, Entity e) {
 		_entities[pos] = e;
 	}
-
-//	public void addShield(Shield s){
-//		_shield.add(s);
-//	}
-
+	//List các vật có thể di chuyển
 	public void addMob(Mob e) {
 		_mobs.add(e);
 	}
-	
+	//List Bomb
 	public void addBomb(Bomb e) {
 		_bombs.add(e);
 	}
@@ -520,13 +525,17 @@ public class Board implements IRender {
 	| Updates
 	|--------------------------------------------------------------------------
 	 */
+
+	// update các thực thể di chuyển một cách liên tục
+	// Ví dụ tường gạch bị phá vỡ thì update lại vào screen
 	protected void updateEntities() {
         if (_game.isPaused()) return;
         for (Entity entity : _entities) {
             entity.update();
         }
     }
-	
+
+	//update các vật thể di chuyển
 	protected void updateMobs() {
 		if(_game.isPaused()) return;
 		Iterator<Mob> itr = _mobs.iterator();
@@ -535,13 +544,7 @@ public class Board implements IRender {
 			itr.next().update();
 	}
 
-//	protected void updateShield() {
-//		if (_game.isPaused()) return;
-//		Iterator<Shield> itr = _shield.iterator();
-//
-//		while(itr.hasNext() && !_game.isPaused())
-//			itr.next().update();
-//	}
+	//Update bomb để load lại trên màn hình
 	protected void updateBombs() {
         if (_game.isPaused()) return;
 
@@ -601,6 +604,15 @@ public class Board implements IRender {
 			return this._time;
 		else
 			return this._time--;
+	}
+
+
+	public int get_cdShield(){
+		return _cdShield;
+	}
+
+	public void set_cdShield(int _cdShield){
+		this._cdShield = _cdShield;
 	}
 
 	public int getPoints() {

@@ -14,8 +14,6 @@ public class Frame extends JFrame {
 
 	private final Game _game;
 
-	private final Audio _audio = new Audio();
-
 	public Frame() {
 		setJMenuBar(new Menu(this));
 
@@ -35,6 +33,7 @@ public class Frame extends JFrame {
 		pack();
 		setLocationRelativeTo(null);
 		setVisible(true);
+		Audio _audio = new Audio();
 		_audio.playSound("res/sounds/audiopb.wav",100);
 		_game.start();
 	}
@@ -75,7 +74,11 @@ public class Frame extends JFrame {
 	public void setPoints(int points) {
 		_infopanel.setPoints(points);
 	}
-	
+
+	public void setCDShield(int cd){
+		_infopanel.setCD(cd);
+	}
+
 	public boolean validCode(String str) {
 		return _game.getBoard().getLevel().validCode(str) != -1;
 	}

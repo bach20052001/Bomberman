@@ -11,7 +11,6 @@ public class Explosion extends Entity {
 
     protected boolean _last;
     protected Board _board;
-//    protected Sprite _sprite1, _sprite2;
 
     public Explosion(int x, int y, int direction, boolean last, Board board) {
         _x = x;
@@ -64,11 +63,9 @@ public class Explosion extends Entity {
 
 	@Override
 	public boolean collide(Entity e) {
-		
 		if(e instanceof Mob) {
 			((Mob)e).kill();
 		}
-		
 		return true;
 	}
 }

@@ -8,10 +8,11 @@ import java.net.URL;
 public class SpriteSheet {
 
 
-	//Load texture từ textures/classic.png
+	//Load texture từ textures/classic8.png
 
-	public static SpriteSheet tiles = new SpriteSheet("/textures/classic8.bmp", 256);
-    public final int SIZE;
+	public static SpriteSheet tiles = new SpriteSheet("/textures/classic9.bmp", 256);
+
+	public final int SIZE;
     private final String _path;
     public int[] _pixels;
 
@@ -31,7 +32,7 @@ public class SpriteSheet {
 			image.getRGB(0, 0, w, h, _pixels, 0, w);
 		} catch (IOException e) {
 			e.printStackTrace();
-			//TODO: what should this do? stop the program? yes i think
+
 			System.exit(0);
 		}
 	}

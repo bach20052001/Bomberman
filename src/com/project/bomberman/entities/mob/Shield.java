@@ -4,14 +4,13 @@ import com.project.bomberman.Board;
 import com.project.bomberman.entities.Entity;
 import com.project.bomberman.graphics.Screen;
 import com.project.bomberman.graphics.Sprite;
-import com.project.bomberman.level.Coordinates;
 
 public class Shield extends Mob{
     private boolean isActive = false;
-    private double timeRemaining = 0;
-    private double cdSkill = 0;
+    private double timeRemaining;
+    private double cdSkill;
     protected Board _board;
-    private Player player;
+    private final Player player;
 
     public Shield(int x, int y,double timeRemaining,double cdSkill,Board board,Player player) {
         super(x,y,board);
@@ -20,7 +19,7 @@ public class Shield extends Mob{
         _sprite = Sprite.shield;
         _board = board;
         this.timeRemaining = timeRemaining; //Tồn tại 5s
-        this.cdSkill = cdSkill; //30s để hồi skill
+        this.cdSkill = cdSkill; //1p để hồi skill
         this.player = player;
     }
 
@@ -40,7 +39,7 @@ public class Shield extends Mob{
     }
 
     public double getCdSkill() {
-        return cdSkill;
+        return cdSkill /60;
     }
 
     public void setTimeRemaining(double timeRemaining) {
@@ -52,13 +51,12 @@ public class Shield extends Mob{
         if (cdSkill > 0) {
             cdSkill--;
         }
-//        System.out.println(cdSkill);
+        System.out.println(cdSkill);
 
         if (timeRemaining > 0){
             timeRemaining--;
             this._x = player.getX();
             this._y = player.getY();
-            System.out.println(_x + "+" + _y);
         }
         else if (isActive)
             {

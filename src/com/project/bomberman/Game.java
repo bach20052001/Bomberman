@@ -10,6 +10,9 @@ import java.awt.image.BufferStrategy;
 import java.awt.image.BufferedImage;
 import java.awt.image.DataBufferInt;
 
+	/**
+	 * Nơi chứa các thuộc tính của các thành phần trong game
+	 */
 public class Game extends Canvas {
 
 	/**
@@ -23,7 +26,6 @@ public class Game extends Canvas {
 			WIDTH = TILES_SIZE * (31 / 2), //minus one to ajust the window,
 			HEIGHT = 13 * TILES_SIZE;
 
-
 	public static int SCALE = 3;
 
 	public static final String TITLE = "Bomberman " + VERSION;
@@ -33,13 +35,13 @@ public class Game extends Canvas {
 	private static final int BOMBRADIUS = 1;
 	private static final double PLAYERSPEED = 1.0;
 
-
 	public static final int TIME = 200;
 	public static final int POINTS = 0;
 	public static final int LIVES = 3;
 	
 	protected static int SCREENDELAY = 3;
 
+	public static final int SHIELD = 30;
 
 	//can be modified with bonus
 	protected static int bombRate = BOMBRATE;
@@ -62,6 +64,7 @@ public class Game extends Canvas {
 	private final BufferedImage image = new BufferedImage(WIDTH, HEIGHT, BufferedImage.TYPE_INT_RGB);
 	private final int[] pixels = ((DataBufferInt) image.getRaster().getDataBuffer()).getData();
 
+
 	public Game(Frame frame) {
 		_frame = frame;
 		_frame.setTitle(TITLE);
@@ -76,6 +79,7 @@ public class Game extends Canvas {
 
 	private void renderGame() { //render will run the maximum times it can per second
 		BufferStrategy bs = getBufferStrategy(); //create a buffer to store images using canvas
+
 		if (bs == null) { //if canvas dont have a bufferstrategy, create it
 			createBufferStrategy(3); //triple buffer
 			return;
@@ -114,26 +118,34 @@ public class Game extends Canvas {
 		bs.show();
 	}
 
+	// Detect Input liên tục
+	// Detect các thành phần trong game liên tục
 	private void update() {
 		_input.update();
 		_board.update();
 	}
 
-
 	public void start() {
 		_running = true;
 		
-		long  lastTime = System.nanoTime();
+		long lastTime = System.nanoTime();
 		long timer = System.currentTimeMillis();
-		final double ns = 1000000000.0 / 60.0; //nanosecond, 60 frames per second
+
+		final double ns = 1000000000.0 / 60.0;
+		//nanosecond, 60 frames per second
+
 		double delta = 0;
 		int frames = 0;
 		int updates = 0;
+
 		requestFocus();
+
 		while(_running) {
 			long now = System.nanoTime();
 			delta += (now - lastTime) / ns;
+
 			lastTime = now;
+
 			while(delta >= 1) {
 				update();
 				updates++;
@@ -153,10 +165,14 @@ public class Game extends Canvas {
 				
 			
 			frames++;
-			if(System.currentTimeMillis() - timer > 1000) { //once per second
+
+			if(System.currentTimeMillis() - timer > 1000) {
+				//once per second
 				_frame.setTime(_board.subtractTime());
 				_frame.setPoints(_board.getPoints());
 				_frame.setLives(_board.getLives());
+				_frame.setCDShield(_board.get_cdShield());
+
 				timer += 1000;
 				_frame.setTitle(TITLE + " | " + updates + " rate, " + frames + " fps");
 				updates = 0;
