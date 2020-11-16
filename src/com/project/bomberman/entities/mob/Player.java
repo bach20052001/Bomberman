@@ -320,13 +320,7 @@ public class Player extends Mob {
 				_sprite = Sprite.movingSprite(Sprite.player_up_1, Sprite.player_up_2, _animate, 20);
 			}
 			break;
-		case 1:
-			_sprite = Sprite.player_right;
-			if(_moving) {
-				_sprite = Sprite.movingSprite(Sprite.player_right_1, Sprite.player_right_2, _animate, 20);
-			}
-			break;
-		case 2:
+			case 2:
 			_sprite = Sprite.player_down;
 			if(_moving) {
 				_sprite = Sprite.movingSprite(Sprite.player_down_1, Sprite.player_down_2, _animate, 20);
@@ -338,7 +332,8 @@ public class Player extends Mob {
 				_sprite = Sprite.movingSprite(Sprite.player_left_1, Sprite.player_left_2, _animate, 20);
 			}
 			break;
-		default:
+			case 1:
+			default:
 			_sprite = Sprite.player_right;
 			if(_moving) {
 				_sprite = Sprite.movingSprite(Sprite.player_right_1, Sprite.player_right_2, _animate, 20);
