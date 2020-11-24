@@ -58,7 +58,7 @@ public class Game extends JMenu {
 			  }
 			  
 			  if(e.getActionCommand().equals("Top Scores")) {
-				  new InfoDialog(_frame, "Top Scores", "If i had more time..", JOptionPane.INFORMATION_MESSAGE);
+				  new InfoDialog(_frame, "Top Scores", "", JOptionPane.INFORMATION_MESSAGE);
 			  }
 			  
 			  if(e.getActionCommand().equals("Codes")) {

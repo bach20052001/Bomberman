@@ -30,8 +30,6 @@ public class FileLevel extends Level {
 
 	/**
 	 * Đọc các thực thể của từng level từ levels/....txt
-	 * @param path
-	 * @throws LoadLevelException
 	 */
 
 	@Override
@@ -76,9 +74,14 @@ public class FileLevel extends Level {
 		int pos = x + y * getWidth();
 		
 		switch(c) { // TODO: minimize this method
+			case 'w':
+				_board.addEntitie(pos, new WallTile(x, y, Sprite.wallAround));
+				break;
+
 			case '#':
 				_board.addEntitie(pos, new WallTile(x, y, Sprite.wall));
 				break;
+
 			case 'b':
 				LayeredEntity layer = new LayeredEntity(x, y,
 						new GrassTile(x, y, Sprite.grass),

@@ -222,6 +222,7 @@ public class Board implements IRender {
 		_mobs.clear();
 		_bombs.clear();
 		_messages.clear();
+		set_cdShield(0);
 		checkFbCall = false;
 		checkAceCall = false;
 

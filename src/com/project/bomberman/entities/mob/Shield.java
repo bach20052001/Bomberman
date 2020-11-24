@@ -51,7 +51,7 @@ public class Shield extends Mob{
         if (cdSkill > 0) {
             cdSkill--;
         }
-        System.out.println(cdSkill);
+//        System.out.println(cdSkill);
 
         if (timeRemaining > 0){
             timeRemaining--;

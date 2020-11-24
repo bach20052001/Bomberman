@@ -50,6 +50,8 @@ public class Sprite {
 
 	public static Sprite wall = new Sprite(16, 5, 0, SpriteSheet.tiles, 14, 16);
 
+	public static Sprite wallAround = new Sprite(16, 4, 1, SpriteSheet.tiles, 14, 16);
+
 	public static Sprite portal = new Sprite(16, 4, 0, SpriteSheet.tiles, 14, 14);
 	
 	/*

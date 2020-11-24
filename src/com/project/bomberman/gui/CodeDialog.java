@@ -77,7 +77,7 @@ public class CodeDialog implements WindowListener, ActionListener {
 			_dialog.dispose();
 		} else {
 			JOptionPane.showMessageDialog(_frame,
-				    "That code isnt correct boy..",
+				    "That code isnt correct!!!",
 				    "Error",
 				    JOptionPane.ERROR_MESSAGE);
 		}
