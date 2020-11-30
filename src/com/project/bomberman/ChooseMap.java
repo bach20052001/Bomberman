@@ -1,6 +1,7 @@
 package com.project.bomberman;
 
 import com.project.bomberman.gui.Frame;
+import com.project.bomberman.graphics.SpriteSheet;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -13,11 +14,13 @@ import java.io.IOException;
 
 public class ChooseMap {
     public void onClickMap1() {
+        SpriteSheet.tiles = new SpriteSheet("/textures/classicBlue.bmp", 256);
         Frame MainWindow = new Frame();
     }
 
     public void onClickMap2() {
-
+        SpriteSheet.tiles = new SpriteSheet("/textures/classicman.bmp", 256);
+        Frame MainWindow = new Frame();
     }
 
     public void onClickStartButton(ActionEvent actionEvent) throws IOException {
