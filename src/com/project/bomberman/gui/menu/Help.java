@@ -42,7 +42,7 @@ public class Help extends JMenu {
 		public void actionPerformed(ActionEvent e) {
 			  
 			  if(e.getActionCommand().equals("How to play")) {
-				  new InfoDialog(_frame, "How to Play", "Movement: W,A,S,D or UP,DOWN, RIGHT, LEFT\nPut Bombs: SPACE, X\nShield : R", JOptionPane.QUESTION_MESSAGE);
+				  new InfoDialog(_frame, "How to Play", "Movement: W, A, S, D or UP, DOWN, RIGHT, LEFT\nPut Bombs: SPACE, X\nShield: R", JOptionPane.QUESTION_MESSAGE);
 			  }
 				  
 			  if(e.getActionCommand().equals("About")) {
