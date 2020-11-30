@@ -2,7 +2,6 @@ package com.project.bomberman;
 
 
 import javafx.application.Application;
-import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -12,7 +11,6 @@ public class Bomberman extends Application {
 
 	@Override
     public void start(Stage primaryStage) throws Exception {
-        //Platform.setImplicitExit(true);
         Parent root = FXMLLoader.load(getClass().getResource("Start.fxml"));
         Scene scene = new Scene(root);
         primaryStage.setTitle("Bomberman");

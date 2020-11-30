@@ -70,6 +70,7 @@ public class Board implements IRender {
 	 * Audio
 	 */
 	private int _cdShield;
+	private int StartPoint;
 
 	protected Audio _audio = new Audio();
 	protected boolean checkAceCall = false;
@@ -151,7 +152,7 @@ public class Board implements IRender {
 	
 	@SuppressWarnings("static-access")
 	private void resetProperties() {
-		_points = Game.POINTS;
+		_points = StartPoint;
 		_lives = Game.LIVES;
 		Player._powerups.clear();
 		checkFbCall = false;
@@ -165,7 +166,7 @@ public class Board implements IRender {
 
 	@SuppressWarnings("static-access")
 	private void resetPoint() {
-		_points = Game.POINTS;
+		_points = StartPoint;
 		Player._powerups.clear();
 		checkFbCall = false;
 		checkAceCall = false;
@@ -179,12 +180,16 @@ public class Board implements IRender {
 	public void restartLevel() {
 		changeLevel(_level.getLevel());
 		resetPoint();
+
 	}
 	/**
 	 * Hack nextLevel
 	 */
 	public void nextLevel() {
-		if (_level.getLevel() <= 5){changeLevel(_level.getLevel() + 1);}
+		if (_level.getLevel() <= 5){
+			changeLevel(_level.getLevel() + 1);
+			StartPoint = getPoints();
+		}
 		else{
 			endGame();
 		}
@@ -264,8 +269,10 @@ public class Board implements IRender {
 	 * Kiểm tra thời gian
 	 */
 	protected void detectEndGame() {
-		if(_time <= 0)
+		if(_time <= 0){
+			_game.WriteFile();
 			restartLevel();
+		}
 	}
 
 	/**
@@ -275,6 +282,7 @@ public class Board implements IRender {
 		_screenToShow = 1;
 		_game.resetScreenDelay();
 		_game.pause();
+		_game.WriteFile();
 	}
 
 	/**

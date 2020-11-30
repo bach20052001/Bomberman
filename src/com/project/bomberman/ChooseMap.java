@@ -1,18 +1,19 @@
 package com.project.bomberman;
 
-import com.project.bomberman.gui.Frame;
 import com.project.bomberman.graphics.SpriteSheet;
-
+import com.project.bomberman.gui.Frame;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import javafx.event.ActionEvent;
 
 import java.io.IOException;
 
 public class ChooseMap {
+
+
     public void onClickMap1() {
         SpriteSheet.tiles = new SpriteSheet("/textures/classicBlue.bmp", 256);
         Frame MainWindow = new Frame();

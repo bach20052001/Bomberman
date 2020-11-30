@@ -1,6 +1,5 @@
 package com.project.bomberman;
 
-import com.project.bomberman.audio.Audio;
 import com.project.bomberman.graphics.Screen;
 import com.project.bomberman.gui.Frame;
 import com.project.bomberman.input.Keyboard;
@@ -9,8 +8,10 @@ import java.awt.*;
 import java.awt.image.BufferStrategy;
 import java.awt.image.BufferedImage;
 import java.awt.image.DataBufferInt;
+import java.io.FileWriter;
+import java.io.IOException;
 
-	/**
+/**
 	 * Nơi chứa các thuộc tính của các thành phần trong game
 	 */
 public class Game extends Canvas {
@@ -60,6 +61,8 @@ public class Game extends Canvas {
 	private final Screen screen;
 	private final Frame _frame;
 
+
+
 	//this will be used to render the game, each render is a calculated image saved here
 	private final BufferedImage image = new BufferedImage(WIDTH, HEIGHT, BufferedImage.TYPE_INT_RGB);
 	private final int[] pixels = ((DataBufferInt) image.getRaster().getDataBuffer()).getData();
@@ -76,6 +79,16 @@ public class Game extends Canvas {
 		addKeyListener(_input);
 	}
 
+	public void WriteFile(){
+		try {
+			FileWriter myWriter = new FileWriter("Scores.txt",true);
+			myWriter.write(_board.getPoints() + "\n");
+			myWriter.close();
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
 
 	private void renderGame() { //render will run the maximum times it can per second
 		BufferStrategy bs = getBufferStrategy(); //create a buffer to store images using canvas

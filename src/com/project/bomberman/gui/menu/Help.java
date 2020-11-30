@@ -1,17 +1,13 @@
 package com.project.bomberman.gui.menu;
 
+import com.project.bomberman.Game;
+import com.project.bomberman.gui.Frame;
+import com.project.bomberman.gui.InfoDialog;
+
+import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
-
-import javax.swing.JMenu;
-import javax.swing.JMenuItem;
-import javax.swing.JOptionPane;
-import javax.swing.KeyStroke;
-
-import com.project.bomberman.gui.Frame;
-import com.project.bomberman.Game;
-import com.project.bomberman.gui.InfoDialog;
 
 public class Help extends JMenu {
 
@@ -52,7 +48,7 @@ public class Help extends JMenu {
 			  if(e.getActionCommand().equals("About")) {
 				  new InfoDialog(_frame, "About", "Version: " + Game.VERSION + "\n", JOptionPane.INFORMATION_MESSAGE);
 			  }
-			  
+
 		  }
 	}
 }
