@@ -233,6 +233,8 @@ public class Sprite {
 	 |--------------------------------------------------------------------------
 	 */
 	public static Sprite shield = new Sprite(16, 6, 11, SpriteSheet.tiles, 16, 16);
+	public static Sprite shield1 = new Sprite(16, 7, 11, SpriteSheet.tiles, 16, 16);
+
 
 
 	private void setColor(int color) {

@@ -51,7 +51,6 @@ public class Shield extends Mob{
         if (cdSkill > 0) {
             cdSkill--;
         }
-//        System.out.println(cdSkill);
 
         if (timeRemaining > 0){
             timeRemaining--;
@@ -70,8 +69,9 @@ public class Shield extends Mob{
 
     @Override
     public void render(Screen screen) {
-        if (timeRemaining > 0)
-        screen.renderEntity((int)_x, (int)_y - _sprite.SIZE, this);
+        if (timeRemaining > 0){
+            screen.renderEntity((int)_x, (int)_y - _sprite.SIZE, this);
+        }
     }
 
     @Override

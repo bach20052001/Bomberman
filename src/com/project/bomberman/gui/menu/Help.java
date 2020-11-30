@@ -25,10 +25,10 @@ public class Help extends JMenu {
 		/*
 		 * Credits
 		 */
-		JMenuItem about = new JMenuItem("About");
-		about.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_A, ActionEvent.CTRL_MASK));
-		about.addActionListener(new MenuActionListener(frame));
-		add(about);
+//		JMenuItem about = new JMenuItem("About");
+//		about.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_A, ActionEvent.CTRL_MASK));
+//		about.addActionListener(new MenuActionListener(frame));
+//		add(about);
 		
 	}
 	
@@ -46,9 +46,9 @@ public class Help extends JMenu {
 			  }
 				  
 			  if(e.getActionCommand().equals("About")) {
-				  new InfoDialog(_frame, "About", "Version: " + Game.VERSION + "\n", JOptionPane.INFORMATION_MESSAGE);
+				  new InfoDialog(_frame, "About", "Version: " + Game.VERSION + "\n"
+						  + "Author : Nguyen Dinh Bach + Dinh Thi Thanh Huyen \n", JOptionPane.INFORMATION_MESSAGE);
 			  }
-
 		  }
 	}
 }

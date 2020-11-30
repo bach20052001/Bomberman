@@ -1,6 +1,7 @@
 package com.project.bomberman.gui;
 
 import com.project.bomberman.Game;
+import com.project.bomberman.audio.Audio;
 import com.project.bomberman.gui.menu.Menu;
 
 import javax.swing.*;
@@ -32,8 +33,8 @@ public class Frame extends JFrame {
 		pack();
 		setLocationRelativeTo(null);
 		setVisible(true);
-//		Audio _audio = new Audio();
-//		_audio.playSound("res/sounds/audiopb.wav",100);
+		Audio _audio = new Audio();
+		_audio.playSound("res/sounds/audiopb.wav",100);
 		_game.start();
 	}
 	
