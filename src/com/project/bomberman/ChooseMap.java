@@ -15,16 +15,18 @@ public class ChooseMap {
 
 
     public void onClickMap1(ActionEvent actionEvent) {
+        SpriteSheet.tiles = new SpriteSheet("/textures/classicBlue.bmp", 256);
         Stage st = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         st.hide();
-        SpriteSheet.tiles = new SpriteSheet("/textures/classicBlue.bmp", 256);
+        
         Frame MainWindow = new Frame();
     }
 
     public void onClickMap2(ActionEvent actionEvent) {
+        SpriteSheet.tiles = new SpriteSheet("/textures/classicman.bmp", 256);
         Stage st = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         st.hide();
-        SpriteSheet.tiles = new SpriteSheet("/textures/classicman.bmp", 256);
+        
         Frame MainWindow = new Frame();
     }
 
